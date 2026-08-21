@@ -145,11 +145,14 @@ def main() -> None:
     )
     text = text.replace(
         "[Add an anonymized repository link before peer review if required.]",
-        "An anonymized repository link will be added before peer review.",
+        "All code, the fixed lot-disjoint split manifest, and the frozen results are "
+        "publicly available under the MIT License at "
+        "https://github.com/ZWY631/wafermap-highres.",
     )
     text = text.replace(
         "[Add the final repository link and software license before submission.]",
-        "Source code and processing pipelines will be released under an open license in an anonymized repository before peer review.",
+        "Source code and processing pipelines are publicly available under the "
+        "MIT License at https://github.com/ZWY631/wafermap-highres.",
     )
 
     # ---- split text at the References section ----
