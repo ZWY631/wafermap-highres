@@ -1,0 +1,12 @@
+metric,unit,fp32,int8,int8_change,change_type
+Model size,MiB,4.9059467316,1.5899057388,-67.5922747265,percent
+Accuracy,percent,98.0380063986,98.0881162549,0.0501098562,percentage_point
+Macro-F1,percent,90.3497703028,90.5824353418,0.2326650390,percentage_point
+Balanced accuracy,percent,89.7063105961,89.8510169829,0.1447063868,percentage_point
+Batch-1 mean inference latency,ms,3.9231076000,3.6555262000,-6.8206490181,percent
+Batch-1 P95 inference latency,ms,4.6504750000,4.2944450000,-7.6557770980,percent
+End-to-end mean time,ms,4.0653276667,3.6550293333,-10.0926264000,percent
+Cold-start total time,ms,60.9025000000,117.9560000000,93.6800623948,percent
+Batch-128 throughput,samples_per_second,492.5399589973,252.0800175867,-48.8203925424,percent
+Batch-1 peak RSS increment,MiB,14.5859375000,10.6679687500,-26.8612747724,percent
+Batch-128 peak RSS increment,MiB,804.1171875000,514.0898437500,-36.0677956221,percent

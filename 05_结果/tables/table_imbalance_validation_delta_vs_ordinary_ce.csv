@@ -1,0 +1,19 @@
+strategy_id,strategy,class_id,class_name,support_per_seed,high_uncertainty,delta_precision_mean,delta_recall_mean,delta_f1_mean,delta_predicted_count_mean
+balanced_sampler,Balanced sampler,0,Center,644,False,-0.1443798918,0.0491718427,-0.0573521721,156.6666666667
+balanced_sampler,Balanced sampler,1,Donut,83,False,-0.0383113741,0.0441767068,0.0025028362,7.6666666667
+balanced_sampler,Balanced sampler,2,Edge-Loc,778,False,-0.2595606828,0.0694087404,-0.1185388553,385.3333333333
+balanced_sampler,Balanced sampler,3,Edge-Ring,1452,False,-0.0305131564,0.0084940312,-0.0115812348,60.6666666667
+balanced_sampler,Balanced sampler,4,Loc,539,False,-0.2578015574,0.1094619666,-0.0852989778,283.0000000000
+balanced_sampler,Balanced sampler,5,Near-full,23,True,-0.0103557312,-0.0144927536,-0.0143186159,0.0000000000
+balanced_sampler,Balanced sampler,6,Random,130,False,-0.0642008754,-0.0051282051,-0.0337700099,8.0000000000
+balanced_sampler,Balanced sampler,7,Scratch,179,False,-0.4362255306,0.1210428305,-0.2756305301,276.3333333333
+balanced_sampler,Balanced sampler,8,none,22110,False,0.0095035526,-0.0435700286,-0.0175886852,-1177.6666666667
+weighted_ce,Weighted CE,0,Center,644,False,-0.1526101223,0.0383022774,-0.0667094024,156.0000000000
+weighted_ce,Weighted CE,1,Donut,83,False,-0.0972039278,0.0883534137,-0.0113662164,18.6666666667
+weighted_ce,Weighted CE,2,Edge-Loc,778,False,-0.2915472618,0.0539845758,-0.1458078069,423.3333333333
+weighted_ce,Weighted CE,3,Edge-Ring,1452,False,-0.0425259578,0.0004591368,-0.0217448026,68.0000000000
+weighted_ce,Weighted CE,4,Loc,539,False,-0.2625111379,0.0958565244,-0.0929577335,275.6666666667
+weighted_ce,Weighted CE,5,Near-full,23,True,-0.0233100233,0.0289855072,0.0018140590,1.3333333333
+weighted_ce,Weighted CE,6,Random,130,False,-0.1146662898,0.0358974359,-0.0408820433,22.0000000000
+weighted_ce,Weighted CE,7,Scratch,179,False,-0.4787659775,0.1396648045,-0.3174160222,344.0000000000
+weighted_ce,Weighted CE,8,none,22110,False,0.0090098555,-0.0499623097,-0.0211778912,-1309.0000000000

@@ -1,0 +1,17 @@
+{
+  "analysis_id": "20260807_error_morphology_quantification",
+  "created_at": "2026-08-07T12:55:18.600166+08:00",
+  "artifact_sha256": {
+    "bootstrap_correlation_replicates.npz": "ce83a87985fde25a3fb7a0dade4fb7b2bd29ba9bf32328c8aa59103b829c1531",
+    "class_feature_error_scatter.pdf": "a28d817d94749bf7c8f44361507c97ecd211f07b8576d17becf87b602855a35e",
+    "class_feature_error_scatter.png": "f514296ec2a52d5ba822b1a31ff9e402bce7419be35b8f55fc9cf70488e6d017",
+    "class_level_descriptive_correlations.csv": "88476012e1bcdac7e9efbf8e8398556be46d2fd27dcdbb1c4f868841ce129f4a",
+    "error_group_morphology_distributions.pdf": "2c2203bac33b25f26e8f7c1c20e7213625ebfe019f2e2d699476a08fa1a57acd",
+    "error_group_morphology_distributions.png": "89e0e1be6b8f574202f624c667dfd7cc7592afed5fb47cadafc999d67d8c01e6",
+    "error_group_morphology_summary.csv": "b1a576e651061bf396e0cd3967ee427071cca717d98babf4687296b21726fe23",
+    "per_class_morphology_error_summary.csv": "eff65195896ccf05fcea7ce0eed0c54b455f8de4efe01bdd03ccff0e88fcef9c",
+    "run_manifest.json": "386f735221c7e176710e9fab2d72a7437e30bcec838dc718fdb6dbed7f4b132b",
+    "sample_level_correlations.csv": "c1d23621a633991413380d653ddd199ce86ea0154c6623d0c74e5cbc35d3268b",
+    "sample_morphology_error_table.csv": "4b1ab57cb0e7c29e69f84dde4735ae9011475c290ff1ae09c7276f7cc9f7ab8f"
+  }
+}

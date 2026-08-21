@@ -1,0 +1,59 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 大文件与原始数据（不入库）
+02_数据/raw/
+04_实验/checkpoints/
+04_实验/logs/
+*.pt
+*.onnx
+*.pth
+
+# 内部与无关目录
+README_目录与命名.md
+00_项目管理/
+06_论文/
+07_汇报/
+08_归档/
+tmp/
+z豆包/
+
+# 废弃的显著性表格变体（仅 canonical 为论文证据）
+05_结果/tables/table_kang_vs_highres_paired_significance.csv
+05_结果/tables/table_kang_vs_highres_paired_significance.invalid_unit_bug.csv
+05_结果/tables/table_kang_vs_highres_paired_significance_corrected.csv
+
+# 已知损坏/废弃文件（严禁入库）
+05_结果/predictions/
+04_实验/metrics/_invalid_runs/
+04_实验/metrics/20260810_kang_vs_highres_significance/
+04_实验/metrics/20260817_kang_vs_highres_significance_corrected/
+04_实验/metrics/20260801_five_model_multiseed_unified_test/
+04_实验/metrics/20260807_imbalance_test_evaluation/
+04_实验/metrics/20260807_imbalance_validation_evaluation/
+
+# 额外内部/中间产物
+.vscode/
+01_文献资料/
+02_数据/interim/
+02_数据/processed/
+04_实验/benchmarks/
+
+# metrics 目录白名单：只保留论文证据子目录（其余一律忽略）
+04_实验/metrics/*
+!04_实验/metrics/20260729_highres_ce_multiseed_final_test/
+!04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/
+!04_实验/metrics/20260801_five_model_paired_significance/
+!04_实验/metrics/20260801_highres_gradcam/
+!04_实验/metrics/20260807_kang_kang_stacking_lot_reproduction/
+!04_实验/metrics/20260807_error_morphology_quantification/
+!04_实验/metrics/20260807_three_model_robustness_comparison/
+!04_实验/metrics/20260817_kang_vs_highres_significance_canonical/
+!04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/

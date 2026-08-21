@@ -1,0 +1,91 @@
+{
+  "analysis_id": "20260729_highres_ce_multiseed_error_analysis",
+  "source_evaluation_id": "20260729_highres_ce_multiseed_final_test",
+  "analysis_type": "post_test_descriptive_error_analysis",
+  "test_inference_performed": false,
+  "model_or_threshold_changes_permitted": false,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "test_samples_per_seed": 25943,
+  "errors_per_seed": {
+    "42": 509,
+    "123": 511,
+    "2026": 510
+  },
+  "samples_by_wrong_seed_count": {
+    "0": 25291,
+    "1": 155,
+    "2": 116,
+    "3": 381
+  },
+  "samples_by_exact_seed_overlap": {
+    "all_correct": 25291,
+    "wrong_seed123": 56,
+    "wrong_seed2026": 53,
+    "wrong_seed42": 46,
+    "wrong_seed123_seed2026": 34,
+    "wrong_seed42_seed123": 40,
+    "wrong_seed42_seed2026": 42,
+    "wrong_seed42_seed123_seed2026": 381
+  },
+  "samples_wrong_at_least_one_seed": 652,
+  "samples_wrong_all_three_seeds": 381,
+  "samples_unanimously_wrong_same_class": 359,
+  "all_three_wrong_but_predictions_differ": 22,
+  "representative_sample_rule": "For four prespecified unanimous defect-to-none pairs, sort by mean confidence across seeds and select the 25th, 50th, and 75th percentile rows with source_index as the deterministic tie-breaker.",
+  "top_unanimous_error_pairs": [
+    {
+      "true_class": "Edge-Loc",
+      "predicted_class": "none",
+      "sample_count": 80
+    },
+    {
+      "true_class": "Loc",
+      "predicted_class": "none",
+      "sample_count": 73
+    },
+    {
+      "true_class": "Center",
+      "predicted_class": "none",
+      "sample_count": 40
+    },
+    {
+      "true_class": "none",
+      "predicted_class": "Edge-Loc",
+      "sample_count": 22
+    },
+    {
+      "true_class": "Scratch",
+      "predicted_class": "none",
+      "sample_count": 21
+    },
+    {
+      "true_class": "Loc",
+      "predicted_class": "Edge-Loc",
+      "sample_count": 17
+    },
+    {
+      "true_class": "none",
+      "predicted_class": "Loc",
+      "sample_count": 13
+    },
+    {
+      "true_class": "none",
+      "predicted_class": "Center",
+      "sample_count": 11
+    },
+    {
+      "true_class": "Edge-Ring",
+      "predicted_class": "Edge-Loc",
+      "sample_count": 9
+    },
+    {
+      "true_class": "Edge-Loc",
+      "predicted_class": "Edge-Ring",
+      "sample_count": 8
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+seed,replicates,random_seed,observed_macro_f1_delta_percentage_points,extreme_replicates,approximate_two_sided_p_value,holm_adjusted_p_value,significant_after_holm_0_05
+42,10000,2026073942,1.5255529634,15,0.0015998400,0.0047995200,True
+123,10000,2026074023,1.1554323964,308,0.0308969103,0.0308969103,True
+2026,10000,2026075926,1.4549788586,41,0.0041995800,0.0083991601,True

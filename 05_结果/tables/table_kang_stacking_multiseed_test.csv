@@ -1,0 +1,6 @@
+method,seed,test_samples,accuracy,macro_f1,balanced_accuracy,evaluation_seconds
+Kang and Kang stacking adapted reproduction,42,25943,0.9774120187,0.8820887040,0.8712378143,18.8089396250
+Kang and Kang stacking adapted reproduction,123,25943,0.9778360251,0.8751953887,0.8521181044,17.3018454170
+Kang and Kang stacking adapted reproduction,2026,25943,0.9800331496,0.8999309921,0.8896073914,17.3679586250
+Kang and Kang stacking adapted reproduction,mean,25943,0.9784270645,0.8857383616,0.8709877700,17.8262478893
+Kang and Kang stacking adapted reproduction,sample_std,25943,0.0014069746,0.0127652857,0.0187458943,0.8521722371

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-08-10T14:14:49.586430+08:00",
+  "status": "fixed_test_evaluation_complete",
+  "samples": 25943,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "device": "mps",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "training_manifest_sha256": {
+    "42": "d98bc76f8f4c5dda7cbfc9876158838fed372f5f460624244b993f70ba31a469",
+    "123": "b54854add9b0c66bc9347424e9a67d558b3f71cb45a2f984b75a7e65179ebfa9",
+    "2026": "3d51edf1a358a06e2b91f5584b8b79fbb897cb37528993727375c4739f35b3ff"
+  },
+  "script_sha256": "e92ae2191c875264a3e093e943d3ecae065fa226c23082f88ba89041c2fe8c84",
+  "artifact_sha256": {
+    "aggregate_metrics.csv": "e88245999d36810b9d683ccd2eee67829d9e959bc4ab95e609d8b2d286a99a59",
+    "confusion_matrices.json": "859bbde6f30c24a14df22a2354decfdf5dcabe36624929d85f6313faa54cf25c",
+    "per_class_metrics.csv": "cf6f37cd4b28af0532b52a6472ab3607fadf523148f4169456bdc43703e6af24",
+    "per_seed_metrics.csv": "b4f7928de73e334d4c9b157d9a7a0671dba049cef36c2860ec7aa3292c4ceb51",
+    "predictions_seed123.csv": "2dd8cbffcd47e9e70cf645edf3d2e1b90a38f0a37da3d733dfee83fc9feacefd",
+    "predictions_seed2026.csv": "ff11cf9098eeecacd3f7a879a091adc7445907af81d0bc6ea924b97135dd6a1d",
+    "predictions_seed42.csv": "0bf6d73d14622ed95296794c0f44c9bdaec47ea2d9708d3d7bb6937515b2a831"
+  }
+}

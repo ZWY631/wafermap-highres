@@ -1,0 +1,4 @@
+seed,test_samples,correct_predictions,error_count,error_rate_percent,accuracy_percent,mean_error_confidence,median_error_confidence,high_confidence_errors_ge_0_9
+42,25943,25434,509,1.96199360,98.03800640,0.72471096,0.70857877,110
+123,25943,25432,511,1.96970281,98.03029719,0.72960845,0.73791444,111
+2026,25943,25433,510,1.96584821,98.03415179,0.73003371,0.73166158,113

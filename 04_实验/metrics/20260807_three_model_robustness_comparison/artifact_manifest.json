@@ -1,0 +1,17 @@
+{
+  "evaluation_id": "20260807_three_model_robustness_comparison",
+  "created_at": "2026-08-07T13:09:25.691148+08:00",
+  "artifact_sha256": {
+    "aggregate_metrics.csv": "6c9c532a7044214748702092921614d5509ebc93f3be136ce636b846836127cb",
+    "baseline_perturbed_confusion_matrices.json": "f36375dac0f3fa875f0c283d86de7c9d140c870362039253633a4e2e0c27e32a",
+    "baseline_perturbed_predictions.npz": "771dd266bde16053465dd08fe128b5d29d98a923db84f02e1c78c3654dce5404",
+    "comparison_vs_highres.csv": "01a34a31e6986ba545c2f27e512754c31907f05696f0c22fb6b5b8caee1d54c2",
+    "descriptive_summary.csv": "8756945fea2d6935fb3931cf6b421b0f3b5ed257d72fb80a57e4de5c17ec32b2",
+    "per_seed_metrics.csv": "6a45c5930a8a04c2d51664b606573f57f14625f6ad35483b7cbc5539a9dc3f2b",
+    "run_manifest.json": "86c321335e1c073c55e601256f60de86a84586ce1177898a1dc094323144acfd",
+    "three_model_robustness_curves.pdf": "35582ccb09d108543d10b0ef67dc894ab1d3b5e8e87ed58f9f728f9c075c4ab9",
+    "three_model_robustness_curves.png": "95467a61da6538e564c94cb0cb22086daf87aaef72a6bcaf85f05016cadea7f5",
+    "three_model_robustness_summary.pdf": "548bb87d1f9f2c64079a97e85ae6d737e3cb826072830701884a2bb2c015b7c1",
+    "three_model_robustness_summary.png": "50ec69295803b9b12b41fc12cd68ebb4eba897228549ea88e2ed56aa937de1e9"
+  }
+}

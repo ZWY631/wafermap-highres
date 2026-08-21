@@ -1,0 +1,10 @@
+true_class,Center,Donut,Edge-Loc,Edge-Ring,Loc,Near-full,Random,Scratch,none
+Center,588,4,1,0,2,0,1,0,48
+Donut,0,76,0,2,2,0,2,0,1
+Edge-Loc,1,0,657,15,9,0,2,0,94
+Edge-Ring,0,0,16,1431,0,0,0,0,5
+Loc,11,9,25,1,399,0,3,8,83
+Near-full,0,0,0,0,0,20,1,0,0
+Random,1,1,4,0,2,1,120,0,1
+Scratch,0,0,5,1,1,0,0,144,28
+none,19,3,44,5,24,0,5,18,21999

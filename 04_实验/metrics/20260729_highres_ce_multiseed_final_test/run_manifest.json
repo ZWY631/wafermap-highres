@@ -1,0 +1,39 @@
+{
+  "evaluation_id": "20260729_highres_ce_multiseed_final_test",
+  "completed_at": "2026-07-29T12:51:09+08:00",
+  "freeze_manifest": "00_项目管理/20260729_最终模型冻结清单.json",
+  "freeze_manifest_sha256": "c682922b1c291f03a41a81e5d15ebfe08e4456e77c816f7943041fc11fcef8db",
+  "irreversible_start_record": "00_项目管理/20260729_最终测试运行审计/attempt_started.json",
+  "irreversible_start_record_sha256": "99861bc3648ae0d9f95ae8f8c59771b233eb67a44f54d9aaf45958b146b32db4",
+  "evaluation_script": "03_代码/scripts/evaluate_final_highres_ce_multiseed.py",
+  "evaluation_script_sha256": "8f2cdd24908e1c724f2fe18601641ec8f67023e0c9cb4f57f3023865cb825577",
+  "device": "mps",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python_version": "3.11.15",
+  "torch_version": "2.13.0",
+  "torchvision_version": "0.28.0",
+  "sklearn_version": "1.9.0",
+  "numpy_version": "2.4.6",
+  "pandas_version": "3.0.5",
+  "batch_size": 256,
+  "num_workers": 0,
+  "test_samples_per_seed": 25943,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "per_seed_checkpoint_sha256": {
+    "42": "cafebb6a76ef566ea05fa47e7745677c35cb3abbec87b1de468c0898b02c67bc",
+    "123": "189785ae00a95ee3c342b5f29e5b8306bf864256016259b19e80be333226929f",
+    "2026": "15791aaddb863abc45f1de55c0c1e8781420238ae7b97c0b6a84740d155c0c7b"
+  },
+  "per_seed_audit_record_sha256": {
+    "42": "506914820dfac47ba387ca5718dad61670884deb73a26a2a319a5ea228056b86",
+    "123": "ce7febe25b2f2253367c484969096c5249a9fd021e93952e371891cb0335de42",
+    "2026": "455224deb0a2944fe20cf550f7d46ff54be663b3ad31c9a4708b14b4be05549c"
+  },
+  "test_set_used_once_per_checkpoint": true,
+  "test_split_was_untouched_during_entire_project": false,
+  "post_test_tuning_allowed": false
+}

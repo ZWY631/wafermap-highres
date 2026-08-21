@@ -1,0 +1,118 @@
+model_id,model,corruption,level,level_index,severity,metric,value_mean,value_sample_std,degradation_from_clean_pp_mean,degradation_from_clean_pp_sample_std,seeds
+highres_shufflenet_v2,HighRes ShuffleNetV2,clean,clean,-1,0,accuracy,0.9803415179,3.854604325e-05,0,0,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,clean,clean,-1,0,macro_f1,0.9020287208,0.001965103989,0,0,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,clean,clean,-1,0,balanced_accuracy,0.891150744,0.005513812413,0,0,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,light,0,0.01,accuracy,0.9718870858,0.0002122950525,0.8454432153,0.01821614935,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,light,0,0.01,macro_f1,0.8820348971,0.003150504634,1.999382365,0.1566408101,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,light,0,0.01,balanced_accuracy,0.8953647444,0.005450615609,-0.4214000447,0.2408053309,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,medium,1,0.05,accuracy,0.9471790721,0.005285495145,3.316244587,0.5267755541,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,medium,1,0.05,macro_f1,0.8148235887,0.009989421551,8.72051321,0.8302722542,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,medium,1,0.05,balanced_accuracy,0.8529532807,0.007843194537,3.819746325,0.2369095256,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,heavy,2,0.1,accuracy,0.9496074728,0.003695263703,3.073404515,0.3679145286,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,heavy,2,0.1,macro_f1,0.7404439151,0.0107958919,16.15848057,0.8992831536,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,bin_flip,heavy,2,0.1,balanced_accuracy,0.7508553491,0.006749603908,14.02953949,0.139762862,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,light,0,2,accuracy,0.978003058,0.0002122950525,0.2338459957,0.02448002529,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,light,0,2,macro_f1,0.8939459975,0.001360902016,0.808272327,0.331974747,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,light,0,2,balanced_accuracy,0.8812579853,0.002978582307,0.9892758674,0.5757598085,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,medium,1,5,accuracy,0.9609914042,0.0009590144012,1.935011371,0.09728581478,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,medium,1,5,macro_f1,0.8072399343,0.005516053435,9.478878653,0.4553556387,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,medium,1,5,balanced_accuracy,0.7908414617,0.008333421059,10.03092823,0.4105148631,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,heavy,2,8,accuracy,0.9423736653,0.002107379553,3.79678526,0.2129472662,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,heavy,2,8,macro_f1,0.6846262995,0.01522677416,21.74024213,1.541072094,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,translation,heavy,2,8,balanced_accuracy,0.6800929884,0.009636666009,21.10577556,1.02639115,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,light,0,8,accuracy,0.978606946,0.0004736617094,0.1734571946,0.04445346565,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,light,0,8,macro_f1,0.8919703756,0.006343194007,1.005834522,0.5009974953,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,light,0,8,balanced_accuracy,0.8724219054,0.01221149087,1.872883856,0.7480187078,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,medium,1,16,accuracy,0.9734546249,0.0002994045972,0.688689306,0.02734687154,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,medium,1,16,macro_f1,0.8649120633,0.004739262811,3.711665748,0.3911557541,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,medium,1,16,balanced_accuracy,0.8333728244,0.008147403029,5.777791959,0.3749967163,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,heavy,2,24,accuracy,0.965231469,3.854604325e-05,1.511004895,0.003854604325,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,heavy,2,24,macro_f1,0.8044869822,0.004417351299,9.754173857,0.4486313112,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,local_missing,heavy,2,24,balanced_accuracy,0.7442185003,0.009148214528,14.69322437,0.4785576796,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,light,0,2,accuracy,0.98041861,6.676370534e-05,-0.00770920865,0.003854604325,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,light,0,2,macro_f1,0.9035907414,0.003839278361,-0.1562020633,0.2031415058,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,light,0,2,balanced_accuracy,0.8940955549,0.007266700233,-0.2944810939,0.254022544,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,medium,1,5,accuracy,0.9797504786,0.0002478163862,0.05910393298,0.02566522036,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,medium,1,5,macro_f1,0.8963397054,0.00122003603,0.5689015379,0.1136071102,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,medium,1,5,balanced_accuracy,0.8822384318,0.005271181011,0.8912312178,0.1300529362,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,heavy,2,10,accuracy,0.9795192024,9.700541489e-05,0.08223155893,0.005888005364,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,heavy,2,10,macro_f1,0.899988704,0.00314808985,0.2040016796,0.3145361447,3
+highres_shufflenet_v2,HighRes ShuffleNetV2,rotation,heavy,2,10,balanced_accuracy,0.8852355331,0.008618313018,0.5915210859,0.5588619264,3
+standard_shufflenet_v2,Standard ShuffleNetV2,clean,clean,-1,0,accuracy,0.9677498105,0.000424590105,0,0,3
+standard_shufflenet_v2,Standard ShuffleNetV2,clean,clean,-1,0,macro_f1,0.8049466062,0.00131589322,0,0,3
+standard_shufflenet_v2,Standard ShuffleNetV2,clean,clean,-1,0,balanced_accuracy,0.7854577334,0.003015476922,0,0,3
+resnet18,ResNet18,clean,clean,-1,0,accuracy,0.9785684,0.0001680183072,0,0,3
+resnet18,ResNet18,clean,clean,-1,0,macro_f1,0.8892551551,0.001955351574,0,0,3
+resnet18,ResNet18,clean,clean,-1,0,balanced_accuracy,0.8765939223,0.001523968341,0,0,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,light,0,0.01,accuracy,0.9666191265,0.0006484448152,0.1130683935,0.02623774924,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,light,0,0.01,macro_f1,0.8017690794,0.00394007871,0.3177526838,0.5215272987,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,light,0,0.01,balanced_accuracy,0.7908543979,0.003243838423,-0.5396664553,0.6143237752,3
+resnet18,ResNet18,bin_flip,light,0,0.01,accuracy,0.9763584268,0.0005616799135,0.2209973146,0.06590509246,3
+resnet18,ResNet18,bin_flip,light,0,0.01,macro_f1,0.8799241617,0.001239550502,0.933099336,0.2562619791,3
+resnet18,ResNet18,bin_flip,light,0,0.01,balanced_accuracy,0.8737695471,0.001497697102,0.2824375198,0.2670410138,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,medium,1,0.05,accuracy,0.9433501651,0.005904510702,2.439964538,0.5585985343,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,medium,1,0.05,macro_f1,0.7480187941,0.00914467453,5.692781209,0.9572812291,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,medium,1,0.05,balanced_accuracy,0.7764115533,0.001890519835,0.9046180043,0.319063436,3
+resnet18,ResNet18,bin_flip,medium,1,0.05,accuracy,0.9565457606,0.0007902722283,2.202263938,0.0874182564,3
+resnet18,ResNet18,bin_flip,medium,1,0.05,macro_f1,0.8219733416,0.005372732416,6.728181344,0.7073765421,3
+resnet18,ResNet18,bin_flip,medium,1,0.05,balanced_accuracy,0.8425261544,0.004871203973,3.406776793,0.6383626069,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,heavy,2,0.1,accuracy,0.9319019903,0.01487179749,3.584782022,1.453288071,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,heavy,2,0.1,macro_f1,0.6443550291,0.01242647606,16.05915771,1.345026424,3
+standard_shufflenet_v2,Standard ShuffleNetV2,bin_flip,heavy,2,0.1,balanced_accuracy,0.6710407306,0.02463347975,11.44170027,2.713876586,3
+resnet18,ResNet18,bin_flip,heavy,2,0.1,accuracy,0.9466908222,0.002883491379,3.187757777,0.2719340712,3
+resnet18,ResNet18,bin_flip,heavy,2,0.1,macro_f1,0.7160285528,0.01014442369,17.32266023,0.8706695519,3
+resnet18,ResNet18,bin_flip,heavy,2,0.1,balanced_accuracy,0.7275068462,0.006768025514,14.90870762,0.6699907271,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,light,0,2,accuracy,0.963458351,0.0007444477476,0.4291459482,0.0700577208,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,light,0,2,macro_f1,0.7909875494,0.004132221939,1.395905685,0.28567681,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,light,0,2,balanced_accuracy,0.7634968524,0.007399448757,2.196088097,0.6705105782,3
+resnet18,ResNet18,translation,light,0,2,accuracy,0.9755746573,0.0006266943375,0.2993742692,0.07615486008,3
+resnet18,ResNet18,translation,light,0,2,macro_f1,0.8772538815,0.003837695828,1.200127355,0.2845689792,3
+resnet18,ResNet18,translation,light,0,2,balanced_accuracy,0.8602405759,0.00424782508,1.63533464,0.3036277764,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,medium,1,5,accuracy,0.9279060504,0.004802709119,3.984376004,0.4600132884,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,medium,1,5,macro_f1,0.6342644926,0.004749264119,17.06821136,0.3574604334,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,medium,1,5,balanced_accuracy,0.6242441872,0.004759050842,16.12135462,0.4764661597,3
+resnet18,ResNet18,translation,medium,1,5,accuracy,0.9411658893,0.00259072236,3.740251063,0.2583543577,3
+resnet18,ResNet18,translation,medium,1,5,macro_f1,0.7091885589,0.006133025424,18.00665962,0.4902546307,3
+resnet18,ResNet18,translation,medium,1,5,balanced_accuracy,0.7229427974,0.00317475136,15.36511249,0.272640834,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,heavy,2,8,accuracy,0.8949748808,0.006128982493,7.277492965,0.6251949578,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,heavy,2,8,macro_f1,0.4818865559,0.01310819821,32.30600503,1.283645552,3
+standard_shufflenet_v2,Standard ShuffleNetV2,translation,heavy,2,8,balanced_accuracy,0.4958721299,0.01430452235,28.95856035,1.198495503,3
+resnet18,ResNet18,translation,heavy,2,8,accuracy,0.9027097868,0.006916088296,7.585861311,0.6815241308,3
+resnet18,ResNet18,translation,heavy,2,8,macro_f1,0.559305537,0.007802050481,32.9949618,0.6655623149,3
+resnet18,ResNet18,translation,heavy,2,8,balanced_accuracy,0.6056718074,0.008810455668,27.0922115,1.006435415,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,light,0,8,accuracy,0.9658610544,0.0007286459741,0.1888756119,0.04814399259,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,light,0,8,macro_f1,0.7903495728,0.002442301267,1.459703342,0.3753915774,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,light,0,8,balanced_accuracy,0.7585073951,0.001376141365,2.695033823,0.4012300598,3
+resnet18,ResNet18,local_missing,light,0,8,accuracy,0.9766154004,0.000424590105,0.1952999525,0.05643189879,3
+resnet18,ResNet18,local_missing,light,0,8,macro_f1,0.8751793314,0.00249395254,1.407582369,0.4069053719,3
+resnet18,ResNet18,local_missing,light,0,8,balanced_accuracy,0.8515729675,0.0041940212,2.502095484,0.4194649939,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,medium,1,16,accuracy,0.9606059438,0.0006057986218,0.7143866682,0.03497579974,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,medium,1,16,macro_f1,0.7578230692,0.003823107459,4.712353701,0.4916416776,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,medium,1,16,balanced_accuracy,0.7092532602,0.006926988975,7.620447315,0.6125255165,3
+resnet18,ResNet18,local_missing,medium,1,16,accuracy,0.9711804083,0.000197802931,0.7387991623,0.0364322987,3
+resnet18,ResNet18,local_missing,medium,1,16,macro_f1,0.838470031,0.007357872277,5.078512404,0.5859927904,3
+resnet18,ResNet18,local_missing,medium,1,16,balanced_accuracy,0.794686069,0.009408949114,8.190785332,1.032396402,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,heavy,2,24,accuracy,0.9523313932,0.0001459329645,1.54184173,0.04377988934,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,heavy,2,24,macro_f1,0.6820985694,0.006376969091,12.28480369,0.7535602515,3
+standard_shufflenet_v2,Standard ShuffleNetV2,local_missing,heavy,2,24,balanced_accuracy,0.610635194,0.01031334248,17.48225394,1.296781249,3
+resnet18,ResNet18,local_missing,heavy,2,24,accuracy,0.9614668054,0.0002994045972,1.710159452,0.03209599506,3
+resnet18,ResNet18,local_missing,heavy,2,24,macro_f1,0.7723464403,0.007945967913,11.69087148,0.6732964768,3
+resnet18,ResNet18,local_missing,heavy,2,24,balanced_accuracy,0.706527137,0.0104128781,17.00667854,1.157762743,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,light,0,2,accuracy,0.9685978234,0.0005133044072,-0.08480129515,0.0154184173,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,light,0,2,macro_f1,0.8062088733,0.00363573812,-0.1262267082,0.4867107197,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,light,0,2,balanced_accuracy,0.7888219349,0.007285941646,-0.3364201514,0.7609225297,3
+resnet18,ResNet18,rotation,light,0,2,accuracy,0.9787739789,0.0002225456845,-0.02055788973,0.01821614935,3
+resnet18,ResNet18,rotation,light,0,2,macro_f1,0.8899075798,0.001275581232,-0.06524247482,0.09999041596,3
+resnet18,ResNet18,rotation,light,0,2,balanced_accuracy,0.8772583907,0.001216110739,-0.06644683277,0.1797987038,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,medium,1,5,accuracy,0.9691631654,0.0004024325062,-0.1413354919,0.0197802931,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,medium,1,5,macro_f1,0.8100278686,0.003811226112,-0.5081262414,0.2737234274,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,medium,1,5,balanced_accuracy,0.7983245527,0.001791797873,-1.286681929,0.381733107,3
+resnet18,ResNet18,rotation,medium,1,5,accuracy,0.9785298539,0.0007065606437,0.003854604325,0.08610533826,3
+resnet18,ResNet18,rotation,medium,1,5,macro_f1,0.8882772047,0.004824530318,0.09779503292,0.5946531932,3
+resnet18,ResNet18,rotation,medium,1,5,balanced_accuracy,0.8741497615,0.00575428497,0.2444160837,0.4693616859,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,heavy,2,10,accuracy,0.9680710275,0.0004263361992,-0.03212170271,0.07255808454,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,heavy,2,10,macro_f1,0.8063261521,0.004594763968,-0.1379545915,0.3279068662,3
+standard_shufflenet_v2,Standard ShuffleNetV2,rotation,heavy,2,10,balanced_accuracy,0.7903081778,0.002318677228,-0.485044439,0.07304688105,3
+resnet18,ResNet18,rotation,heavy,2,10,accuracy,0.9779259659,0.0002323445158,0.06424340541,0.01239081931,3
+resnet18,ResNet18,rotation,heavy,2,10,macro_f1,0.8887977429,0.00281783314,0.04574121886,0.1645691446,3
+resnet18,ResNet18,rotation,heavy,2,10,balanced_accuracy,0.8740293508,0.001654046979,0.256457151,0.06563733262,3

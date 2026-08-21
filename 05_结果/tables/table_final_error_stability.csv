@@ -1,0 +1,5 @@
+wrong_seed_count,category,sample_count,sample_percent
+0,correct_by_all_three_seeds,25291,97.48679798
+1,wrong_by_one_seed,155,0.59746367
+2,wrong_by_two_seeds,116,0.44713410
+3,wrong_by_all_three_seeds,381,1.46860425

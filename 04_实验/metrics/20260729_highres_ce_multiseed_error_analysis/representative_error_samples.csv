@@ -1,0 +1,13 @@
+source_index,lotName,waferIndex,label,split,label_id,true_label_id,image_row,predicted_label_seed42,confidence_seed42,correct_seed42,predicted_label_seed123,confidence_seed123,correct_seed123,predicted_label_seed2026,confidence_seed2026,correct_seed2026,wrong_seed_count,all_seeds_wrong,unanimous_prediction,unanimous_wrong,unanimous_predicted_label,mean_prediction_confidence,selection_quantile,selection_label,pair_sample_count,pair_order,quantile_order
+698914,lot42980,6.00000000,Edge-Loc,test,2,2,67872,none,0.66585250,False,none,0.79633860,False,none,0.70098790,False,3,True,True,True,none,0.72105967,0.25000000,25th percentile,80,0,0
+426208,lot25616,14.00000000,Edge-Loc,test,2,2,24902,none,0.84108764,False,none,0.89980760,False,none,0.69234544,False,3,True,True,True,none,0.81108023,0.50000000,50th percentile,80,0,1
+410579,lot24477,8.00000000,Edge-Loc,test,2,2,24612,none,0.94747170,False,none,0.94204420,False,none,0.86084425,False,3,True,True,True,none,0.91678672,0.75000000,75th percentile,80,0,2
+772014,lot45936,3.00000000,Loc,test,4,4,134863,none,0.67827713,False,none,0.66283570,False,none,0.63417470,False,3,True,True,True,none,0.65842918,0.25000000,25th percentile,73,1,0
+640999,lot40381,20.00000000,Loc,test,4,4,29249,none,0.93890540,False,none,0.73791444,False,none,0.96210130,False,3,True,True,True,none,0.87964038,0.50000000,50th percentile,73,1,1
+760749,lot45479,2.00000000,Loc,test,4,4,124018,none,0.92134553,False,none,0.97099555,False,none,0.95400524,False,3,True,True,True,none,0.94878211,0.75000000,75th percentile,73,1,2
+656219,lot41003,20.00000000,Center,test,0,0,41597,none,0.78813830,False,none,0.54435486,False,none,0.72316520,False,3,True,True,True,none,0.68521945,0.25000000,25th percentile,40,2,0
+809701,lot47468,3.00000000,Center,test,0,0,171290,none,0.81154066,False,none,0.86074140,False,none,0.85583620,False,3,True,True,True,none,0.84270609,0.50000000,50th percentile,40,2,1
+764342,lot45624,21.00000000,Center,test,0,0,127521,none,0.91005940,False,none,0.96783555,False,none,0.97181690,False,3,True,True,True,none,0.94990395,0.75000000,75th percentile,40,2,2
+787403,lot46565,13.00000000,Scratch,test,7,7,149587,none,0.80653280,False,none,0.92123090,False,none,0.60200100,False,3,True,True,True,none,0.77658823,0.25000000,25th percentile,21,3,0
+5226,lot211,2.00000000,Scratch,test,7,7,4646,none,0.80977726,False,none,0.86042550,False,none,0.82470655,False,3,True,True,True,none,0.83163644,0.50000000,50th percentile,21,3,1
+802771,lot47189,7.00000000,Scratch,test,7,7,164525,none,0.96272886,False,none,0.95355330,False,none,0.91610400,False,3,True,True,True,none,0.94412872,0.75000000,75th percentile,21,3,2

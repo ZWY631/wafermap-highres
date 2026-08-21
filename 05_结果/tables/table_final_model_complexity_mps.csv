@@ -1,0 +1,3 @@
+model,parameters_million,parameter_change_percent_vs_resnet18,estimated_macs_million,conv_linear_flops_million,state_dict_memory_mib,mps_batch1_latency_ms_mean_sd,mps_batch1_samples_per_second_mean_sd,mps_batch128_samples_per_second_mean_sd
+ResNet18 Baseline,11.1749,0.0000,141.6279,283.2558,42.6655,3.097 +/- 0.042,323.0 +/- 4.4,6167.3 +/- 158.1
+Final HighRes ShuffleNetV2,1.2624,-88.7032,178.2072,356.4145,4.8778,8.629 +/- 0.090,115.9 +/- 1.2,1146.7 +/- 9.0

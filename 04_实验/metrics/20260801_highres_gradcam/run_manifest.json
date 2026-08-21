@@ -1,0 +1,116 @@
+{
+  "analysis_id": "20260801_highres_gradcam",
+  "completed_at": "2026-08-01T13:50:53.708161+08:00",
+  "interpretation_boundary": "Grad-CAM shows model-sensitive regions only; it is not defect localization accuracy or causal evidence.",
+  "model": "ShuffleNetV2HighRes",
+  "seed": 42,
+  "target_layer": "network.conv5[0]",
+  "device": "cpu",
+  "python": "3.11.15",
+  "torch": "2.13.0",
+  "sample_classes": [
+    "Edge-Loc",
+    "Loc",
+    "Scratch"
+  ],
+  "input_hashes": {
+    "00_项目管理/20260801_GradCAM可解释性冻结协议.md": "f1b1a38e6289482924dd75093a6bc54cc1768078e7389801ee299f514f250d12",
+    "00_项目管理/20260801_五模型统一评估冻结清单.json": "2a97b07434239589da586aaa5b836d3b1aaba8d957c40cc8f5d5e54fd1139d5f",
+    "04_实验/checkpoints/shufflenet_v2_highres_ce_full/best.pt": "cafebb6a76ef566ea05fa47e7745677c35cb3abbec87b1de468c0898b02c67bc",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed42.csv": "da5e5f43339e538efd40797de3e2cd6abbacb7c5fec07cac956d72aa32cdfc21",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/representative_error_samples.csv": "f0ea6f7f1c70994956afc2e8b68c2ddf23700119cd82c2c9f0ca1e445ea5d465",
+    "02_数据/processed/wm811k_labeled_64x64/images_uint8.npy": "ec496dd8a5cdb2f83c54a048497d1f6d77e64ae74efd495c36456629c9cf9aa3",
+    "02_数据/processed/wm811k_labeled_64x64/metadata.csv": "b6b1e0c2d819c60aa879e50015408161324616cbe5d928f4001d6609a7c9e681"
+  },
+  "script_sha256": "88a1e4945f1e414cbe074761f2b06dd2dd3760d7a69ab00a75b38d29ec84160b",
+  "artifacts": [
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/edge_loc_correct_predicted.npy",
+      "sha256": "3ee7548478d51c29b0523c0dfcc5625bbfc0f32213b2c48693a3259f2638a89f"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/edge_loc_error_predicted_none.npy",
+      "sha256": "1972a63acccc3f17aabd99890058561be7595408dc3426f0c9f027b674ecf96f"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/edge_loc_error_true_class.npy",
+      "sha256": "692eed2a14a799413b940fcb7d83ad4afd03147b5e4805f9d4100d7afb03dbaa"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/loc_correct_predicted.npy",
+      "sha256": "a274499f767f0b3205447ca3be7e780a434da64a36b95ff2239ac8b8feba69ee"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/loc_error_predicted_none.npy",
+      "sha256": "1972a63acccc3f17aabd99890058561be7595408dc3426f0c9f027b674ecf96f"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/loc_error_true_class.npy",
+      "sha256": "1487b0a4d6636d3cd25fa1b251de08fe8f383ff00ff3559c079a151c9ab842ff"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/scratch_correct_predicted.npy",
+      "sha256": "8e187055ea677446c3f5dab7329590a8fffb0c1b27f0f98d740da16a56f58842"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/scratch_error_predicted_none.npy",
+      "sha256": "1972a63acccc3f17aabd99890058561be7595408dc3426f0c9f027b674ecf96f"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_arrays/scratch_error_true_class.npy",
+      "sha256": "e2913c99214f613e34d59c98bfd825b1879b7c68d8c2920289e69fff45c1ea98"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/cam_summary.csv",
+      "sha256": "ce5b1c42ed151dffe2d6d958535572503d85846bc510fd29cabdd9c980cf2514"
+    },
+    {
+      "path": "04_实验/metrics/20260801_highres_gradcam/sample_selection.csv",
+      "sha256": "d64538d428a4bf415e4688d63edd7c70fe84d815dd323978a9c9f50f16f0d583"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_representative_samples.pdf",
+      "sha256": "029ba07f271be0838dc9eb1b1fec239be6527179d34214969d2f2b70b7f69d8f"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_representative_samples.png",
+      "sha256": "577e7682f28dfd6300397f0e34a09c574ec05c6350a286d4929ff420905129be"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/edge_loc_correct_predicted_cam.png",
+      "sha256": "508e697c689c3c884eed0bf5124070015ca60916d7388b8bb173075e611a7bb1"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/edge_loc_error_predicted_none_cam.png",
+      "sha256": "5282cf0a5923b171570b154f7abc84c2ab57d7416180685202189e2f49f7c415"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/edge_loc_error_true_class_cam.png",
+      "sha256": "b077785edd7e21a5d98a49aea6b9d0330e676cbc2e78b5e0a2d6af910149dde8"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/loc_correct_predicted_cam.png",
+      "sha256": "09e75c7fce41152acd83e01f1230cb31a05c7028620585e8dd15972e89ca20dd"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/loc_error_predicted_none_cam.png",
+      "sha256": "047e8b952e56c0f9cce9cbdb0ddfb3de13192abdf80b025c97b65308114d8704"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/loc_error_true_class_cam.png",
+      "sha256": "fe164a206fdf662f700faab72a5e71a0912ff6f6d4f4d25deb2ee1eff09938b2"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/scratch_correct_predicted_cam.png",
+      "sha256": "61063a6964db016de3ef254756359da4f7ceabab82e2d2f7374b38a4fec3c443"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/scratch_error_predicted_none_cam.png",
+      "sha256": "9ac06887937f190ecddf58ff458058771df266369596b1acf354546f36b6c83d"
+    },
+    {
+      "path": "05_结果/figures/model_results/highres_gradcam_samples/scratch_error_true_class_cam.png",
+      "sha256": "19456fbf12ef7299306711fff9d062ea0f5ebbd870d20abf31d7a90ab5bb6bd4"
+    }
+  ]
+}

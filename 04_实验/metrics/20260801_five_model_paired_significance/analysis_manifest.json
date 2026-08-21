@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20260801_five_model_paired_significance",
+  "completed_at": "2026-08-01T11:53:34.122029+08:00",
+  "comparison_count": 12,
+  "bootstrap_replicates": 10000,
+  "randomization_replicates": 10000,
+  "holm_scope": "12 comparisons separately for McNemar and Macro-F1 randomization",
+  "input_hashes": {
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/highres_shufflenet_v2_seed42.csv": "ba8518522293f6efd68ed8f88c7f0af87eb3bd2f5db319a4507bb10c9b6344f9",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/resnet18_seed42.csv": "e8e44de1d999ee0295fe75779285815a4da469130ad9c390d4c01b80b4ca40b7",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/highres_shufflenet_v2_seed123.csv": "5a4e8fdc8ebfe52e533f1ea4b304bcc025c280a1d78a2668fef9076137091229",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/resnet18_seed123.csv": "8b2473af5c46ac61d7d64b31687ba0d3246d4a69449c4977023f8ccc71ebf78d",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/highres_shufflenet_v2_seed2026.csv": "8bd60dbbcac5743ebf46e27ab0a480b893ea72e5105f9c50147eec808813af3d",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/resnet18_seed2026.csv": "9d7071839fa82eff9a65ffbe975f555d942816f2ac5136ac121cafdddc47157f",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/efficientnet_b0_seed42.csv": "4cf3fedfcd7a2fbaa7a8a9ac1175a09bb2d3416dcf41705c0bbcb46fc6946ee5",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/efficientnet_b0_seed123.csv": "b499862134bba1fcb8788d3177c3a4cc3a66a151ddcc0acedc134a1c18c658a1",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/efficientnet_b0_seed2026.csv": "e0671a5adfc2308fdcc7ff676aae96c7d050cbc4a254b6739fb288f0783c036f",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/mobilenet_v3_small_seed42.csv": "38b6465336724a7706fa0d0e53c60a885b6f3f69ca4258d3be5ca98f81adf27e",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/mobilenet_v3_small_seed123.csv": "35dc1f7fc03207daa252aebe344912d9b7156d077fb8796823d27f83148eb398",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/mobilenet_v3_small_seed2026.csv": "d3a6aaa1a86422663cf0f0bb095f3cb4adc234212a9d36ca31f214f5672562ef",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/standard_shufflenet_v2_seed42.csv": "be10202f404ae58cb9812d31cb9cb5dbb690ace2f6dcda701a60cb53b26aa6df",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/standard_shufflenet_v2_seed123.csv": "07ee22a9133e63b2c3d52e5f7cca36741d50e109a5e23bddf2b387453d73b412",
+    "04_实验/metrics/20260801_five_model_multiseed_unified_test/predictions/standard_shufflenet_v2_seed2026.csv": "07cb3d1ee0635a6337c772a9917dff5b00e319c998b3132ab9b10a0967aed8f0"
+  },
+  "test_split_role": "fixed benchmark with historical access"
+}

@@ -1,0 +1,352 @@
+model_id,model,seed,corruption,level,level_index,severity,metric,value,clean_value,degradation_from_clean_pp,source
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,clean,clean,-1,0,accuracy,0.980380064,0.980380064,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,clean,clean,-1,0,macro_f1,0.903497703,0.903497703,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,clean,clean,-1,0,balanced_accuracy,0.897063106,0.897063106,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,light,0,0.01,accuracy,0.9721312107,0.980380064,0.8248853255,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,light,0,0.01,macro_f1,0.8853071869,0.903497703,1.819051612,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,light,0,0.01,balanced_accuracy,0.9016462453,0.897063106,-0.458313933,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,medium,1,0.05,accuracy,0.9469220984,0.980380064,3.345796554,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,medium,1,0.05,macro_f1,0.8173202663,0.903497703,8.617743668,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,medium,1,0.05,balanced_accuracy,0.8611246554,0.897063106,3.593845055,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,heavy,2,0.1,accuracy,0.949234861,0.980380064,3.114520294,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,heavy,2,0.1,macro_f1,0.7445193942,0.903497703,15.89783089,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,bin_flip,heavy,2,0.1,balanced_accuracy,0.758360389,0.897063106,13.87027169,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,light,0,2,accuracy,0.977758933,0.980380064,0.2621130941,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,light,0,2,macro_f1,0.8927875141,0.903497703,1.071018891,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,light,0,2,balanced_accuracy,0.8831071839,0.897063106,1.395592211,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,medium,1,5,accuracy,0.9601433913,0.980380064,2.023667271,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,medium,1,5,macro_f1,0.8060290306,0.903497703,9.746867247,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,medium,1,5,balanced_accuracy,0.7973787146,0.897063106,9.968439136,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,heavy,2,8,accuracy,0.9401765409,0.980380064,4.020352311,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,heavy,2,8,macro_f1,0.6708941114,0.903497703,23.26035917,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,translation,heavy,2,8,balanced_accuracy,0.6777659849,0.897063106,21.9297121,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,light,0,8,accuracy,0.9791465906,0.980380064,0.1233473384,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,light,0,8,macro_f1,0.8991985817,0.903497703,0.4299121377,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,light,0,8,balanced_accuracy,0.8865167346,0.897063106,1.054637133,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,medium,1,16,accuracy,0.9737886906,0.980380064,0.6591373396,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,medium,1,16,macro_f1,0.8703707331,0.903497703,3.312696991,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,medium,1,16,balanced_accuracy,0.842778588,0.897063106,5.428451796,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,heavy,2,24,accuracy,0.965270015,0.980380064,1.511004895,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,heavy,2,24,macro_f1,0.8089236484,0.903497703,9.457405459,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,local_missing,heavy,2,24,balanced_accuracy,0.754761758,0.897063106,14.2301348,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,light,0,2,accuracy,0.9804957021,0.980380064,-0.01156381297,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,light,0,2,macro_f1,0.905389788,0.903497703,-0.1892084986,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,light,0,2,balanced_accuracy,0.9006641904,0.897063106,-0.3601084463,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,medium,1,5,accuracy,0.9795705971,0.980380064,0.08094669082,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,medium,1,5,macro_f1,0.8965403666,0.903497703,0.6957336444,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,medium,1,5,balanced_accuracy,0.8882633275,0.897063106,0.8799778456,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,heavy,2,10,accuracy,0.9796091431,0.980380064,0.0770920865,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,heavy,2,10,macro_f1,0.9033573391,0.903497703,0.01403639565,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,42,rotation,heavy,2,10,balanced_accuracy,0.8947203882,0.897063106,0.2342717754,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,clean,clean,-1,0,accuracy,0.9803029719,0.9803029719,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,clean,clean,-1,0,macro_f1,0.8997964974,0.8997964974,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,clean,clean,-1,0,balanced_accuracy,0.886148809,0.886148809,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,light,0,0.01,accuracy,0.9717842963,0.9803029719,0.8518675558,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,light,0,0.01,macro_f1,0.8790222461,0.8997964974,2.077425126,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,light,0,0.01,balanced_accuracy,0.8925649791,0.886148809,-0.6416170015,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,medium,1,0.05,accuracy,0.942026751,0.9803029719,3.827622095,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,medium,1,0.05,macro_f1,0.8038226352,0.8997964974,9.59738622,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,medium,1,0.05,balanced_accuracy,0.8454857038,0.886148809,4.066310528,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,heavy,2,0.1,accuracy,0.9461126315,0.9803029719,3.419034036,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,heavy,2,0.1,macro_f1,0.7282035222,0.8997964974,17.15929752,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,bin_flip,heavy,2,0.1,balanced_accuracy,0.7452826822,0.886148809,14.08661268,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,light,0,2,accuracy,0.9781058474,0.9803029719,0.2197124465,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,light,0,2,macro_f1,0.8954447453,0.8997964974,0.4351752046,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,light,0,2,balanced_accuracy,0.8828448201,0.886148809,0.3303988911,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,medium,1,5,accuracy,0.960798674,0.9803029719,1.950429788,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,medium,1,5,macro_f1,0.8024299332,0.8997964974,9.736656412,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,medium,1,5,balanced_accuracy,0.7814577596,0.886148809,10.46910494,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,heavy,2,8,accuracy,0.9425663956,0.9803029719,3.773657634,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,heavy,2,8,macro_f1,0.6819831923,0.8997964974,21.7813305,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,translation,heavy,2,8,balanced_accuracy,0.6718328961,0.886148809,21.43159129,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,light,0,8,accuracy,0.9784142158,0.9803029719,0.1888756119,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,light,0,8,macro_f1,0.8873311443,0.8997964974,1.246535306,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,light,0,8,balanced_accuracy,0.8657242788,0.886148809,2.042453024,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,medium,1,16,accuracy,0.9733646841,0.9803029719,0.6938287785,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,medium,1,16,macro_f1,0.8625185929,0.8997964974,3.727790446,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,medium,1,16,balanced_accuracy,0.8288398968,0.886148809,5.730891228,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,heavy,2,24,accuracy,0.965231469,0.9803029719,1.507150291,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,heavy,2,24,macro_f1,0.8044480956,0.8997964974,9.534840172,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,local_missing,heavy,2,24,balanced_accuracy,0.7395122187,0.886148809,14.66365904,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,light,0,2,accuracy,0.980380064,0.9803029719,-0.00770920865,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,light,0,2,macro_f1,0.8991822821,0.8997964974,0.06142152335,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,light,0,2,balanced_accuracy,0.8862896553,0.886148809,-0.01408462188,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,medium,1,5,accuracy,0.9796476892,0.9803029719,0.06552827352,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,medium,1,5,macro_f1,0.8950317784,0.8997964974,0.4764719006,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,medium,1,5,balanced_accuracy,0.8784771027,0.886148809,0.767170636,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,heavy,2,10,accuracy,0.9794164129,0.9803029719,0.08865589947,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,heavy,2,10,macro_f1,0.8994874727,0.8997964974,0.0309024694,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,123,rotation,heavy,2,10,balanced_accuracy,0.8831014504,0.886148809,0.3047358675,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,clean,clean,-1,0,accuracy,0.9803415179,0.9803415179,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,clean,clean,-1,0,macro_f1,0.902791962,0.902791962,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,clean,clean,-1,0,balanced_accuracy,0.890240317,0.890240317,-0,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,light,0,0.01,accuracy,0.9717457503,0.9803415179,0.8595767644,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,light,0,0.01,macro_f1,0.8817752584,0.902791962,2.101670359,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,light,0,0.01,balanced_accuracy,0.891883009,0.890240317,-0.1642691995,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,medium,1,0.05,accuracy,0.9525883668,0.9803415179,2.775315114,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,medium,1,0.05,macro_f1,0.8233278646,0.902791962,7.946409743,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,medium,1,0.05,balanced_accuracy,0.852249483,0.890240317,3.799083392,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,heavy,2,0.1,accuracy,0.9534749258,0.9803415179,2.686659214,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,heavy,2,0.1,macro_f1,0.7486088288,0.902791962,15.41831332,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,bin_flip,heavy,2,0.1,balanced_accuracy,0.7489229762,0.890240317,14.13173408,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,light,0,2,accuracy,0.9781443935,0.9803415179,0.2197124465,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,light,0,2,macro_f1,0.8936057331,0.902791962,0.9186228855,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,light,0,2,balanced_accuracy,0.877821952,0.890240317,1.2418365,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,medium,1,5,accuracy,0.9620321474,0.9803415179,1.830937054,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,medium,1,5,macro_f1,0.813260839,0.902791962,8.953112302,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,medium,1,5,balanced_accuracy,0.7936879109,0.890240317,9.65524061,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,heavy,2,8,accuracy,0.9443780596,0.9803415179,3.596345835,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,heavy,2,8,macro_f1,0.7010015948,0.902791962,20.17903672,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,translation,heavy,2,8,balanced_accuracy,0.690680084,0.890240317,19.9560233,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,light,0,8,accuracy,0.9782600316,0.9803415179,0.2081486335,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,light,0,8,macro_f1,0.8893814008,0.902791962,1.341056121,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,light,0,8,balanced_accuracy,0.8650247028,0.890240317,2.521561412,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,medium,1,16,accuracy,0.9732104999,0.9803415179,0.7131018001,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,medium,1,16,macro_f1,0.8618468639,0.902791962,4.094509807,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,medium,1,16,balanced_accuracy,0.8284999884,0.890240317,6.174032853,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,heavy,2,24,accuracy,0.9651929229,0.9803415179,1.5148595,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,heavy,2,24,macro_f1,0.8000892026,0.902791962,10.27027594,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,local_missing,heavy,2,24,balanced_accuracy,0.7383815243,0.890240317,15.18587926,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,light,0,2,accuracy,0.980380064,0.9803415179,-0.003854604325,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,light,0,2,macro_f1,0.9062001541,0.902791962,-0.3408192146,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,light,0,2,balanced_accuracy,0.8953328191,0.890240317,-0.5092502136,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,medium,1,5,accuracy,0.9800331496,0.9803415179,0.0308368346,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,medium,1,5,macro_f1,0.8974469713,0.902791962,0.5344990687,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,medium,1,5,balanced_accuracy,0.8799748653,0.890240317,1.026545172,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,heavy,2,10,accuracy,0.979532051,0.9803415179,0.08094669082,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,heavy,2,10,macro_f1,0.8971213002,0.902791962,0.5670661737,reused_highres_robustness
+highres_shufflenet_v2,HighRes ShuffleNetV2,2026,rotation,heavy,2,10,balanced_accuracy,0.8778847608,0.890240317,1.235555615,reused_highres_robustness
+standard_shufflenet_v2,Standard ShuffleNetV2,42,clean,clean,-1,0,accuracy,0.9681609683,0.9681609683,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,42,clean,clean,-1,0,macro_f1,0.8038636153,0.8038636153,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,42,clean,clean,-1,0,balanced_accuracy,0.7821177848,0.7821177848,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,123,clean,clean,-1,0,accuracy,0.9673129553,0.9673129553,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,123,clean,clean,-1,0,macro_f1,0.8064110984,0.8064110984,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,123,clean,clean,-1,0,balanced_accuracy,0.7862752647,0.7862752647,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,clean,clean,-1,0,accuracy,0.9677755078,0.9677755078,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,clean,clean,-1,0,macro_f1,0.804565105,0.804565105,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,clean,clean,-1,0,balanced_accuracy,0.7879801505,0.7879801505,0,reused_unified_clean
+resnet18,ResNet18,42,clean,clean,-1,0,accuracy,0.9786840381,0.9786840381,0,reused_unified_clean
+resnet18,ResNet18,42,clean,clean,-1,0,macro_f1,0.8882421734,0.8882421734,0,reused_unified_clean
+resnet18,ResNet18,42,clean,clean,-1,0,balanced_accuracy,0.8748348081,0.8748348081,0,reused_unified_clean
+resnet18,ResNet18,123,clean,clean,-1,0,accuracy,0.978645492,0.978645492,0,reused_unified_clean
+resnet18,ResNet18,123,clean,clean,-1,0,macro_f1,0.8915091587,0.8915091587,0,reused_unified_clean
+resnet18,ResNet18,123,clean,clean,-1,0,balanced_accuracy,0.8774332636,0.8774332636,0,reused_unified_clean
+resnet18,ResNet18,2026,clean,clean,-1,0,accuracy,0.9783756697,0.9783756697,0,reused_unified_clean
+resnet18,ResNet18,2026,clean,clean,-1,0,macro_f1,0.8880141331,0.8880141331,0,reused_unified_clean
+resnet18,ResNet18,2026,clean,clean,-1,0,balanced_accuracy,0.8775136953,0.8775136953,0,reused_unified_clean
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,light,0,0.01,accuracy,0.9671202251,0.9681609683,0.1040743168,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,light,0,0.01,macro_f1,0.8057839936,0.8038636153,-0.1920378388,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,light,0,0.01,balanced_accuracy,0.7945815581,0.7821177848,-1.246377327,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,light,0,0.01,accuracy,0.9658867517,0.9673129553,0.14262036,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,light,0,0.01,macro_f1,0.7979083635,0.8064110984,0.8502734853,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,light,0,0.01,balanced_accuracy,0.7886688001,0.7862752647,-0.2393535378,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,light,0,0.01,accuracy,0.9668504028,0.9677755078,0.0925105038,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,light,0,0.01,macro_f1,0.8016148809,0.804565105,0.2950224051,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,light,0,0.01,balanced_accuracy,0.7893128356,0.7879801505,-0.1332685012,new_inference
+resnet18,ResNet18,42,bin_flip,light,0,0.01,accuracy,0.9757159928,0.9786840381,0.296804533,new_inference
+resnet18,ResNet18,42,bin_flip,light,0,0.01,macro_f1,0.8788451966,0.8882421734,0.9396976832,new_inference
+resnet18,ResNet18,42,bin_flip,light,0,0.01,balanced_accuracy,0.8747033976,0.8748348081,0.01314105047,new_inference
+resnet18,ResNet18,123,bin_flip,light,0,0.01,accuracy,0.9767567359,0.978645492,0.1888756119,new_inference
+resnet18,ResNet18,123,bin_flip,light,0,0.01,macro_f1,0.8796491745,0.8915091587,1.185998422,new_inference
+resnet18,ResNet18,123,bin_flip,light,0,0.01,balanced_accuracy,0.8745631929,0.8774332636,0.2870070793,new_inference
+resnet18,ResNet18,2026,bin_flip,light,0,0.01,accuracy,0.9766025517,0.9783756697,0.1773117989,new_inference
+resnet18,ResNet18,2026,bin_flip,light,0,0.01,macro_f1,0.8812781141,0.8880141331,0.6736019027,new_inference
+resnet18,ResNet18,2026,bin_flip,light,0,0.01,balanced_accuracy,0.872042051,0.8775136953,0.5471644298,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,medium,1,0.05,accuracy,0.9453417107,0.9681609683,2.28192576,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,medium,1,0.05,macro_f1,0.7428335236,0.8038636153,6.103009166,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,medium,1,0.05,balanced_accuracy,0.7753525588,0.7821177848,0.6765226033,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,medium,1,0.05,accuracy,0.936707397,0.9673129553,3.060555834,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,medium,1,0.05,macro_f1,0.7426452635,0.8064110984,6.376583491,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,medium,1,0.05,balanced_accuracy,0.7785942182,0.7862752647,0.76810465,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,medium,1,0.05,accuracy,0.9480013877,0.9677755078,1.977412019,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,medium,1,0.05,macro_f1,0.7585775953,0.804565105,4.598750969,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,medium,1,0.05,balanced_accuracy,0.775287883,0.7879801505,1.26922676,new_inference
+resnet18,ResNet18,42,bin_flip,medium,1,0.05,accuracy,0.9569826157,0.9786840381,2.170142235,new_inference
+resnet18,ResNet18,42,bin_flip,medium,1,0.05,macro_f1,0.8273993686,0.8882421734,6.08428048,new_inference
+resnet18,ResNet18,42,bin_flip,medium,1,0.05,balanced_accuracy,0.8481139731,0.8748348081,2.672083499,new_inference
+resnet18,ResNet18,123,bin_flip,medium,1,0.05,accuracy,0.9556335042,0.978645492,2.301198782,new_inference
+resnet18,ResNet18,123,bin_flip,medium,1,0.05,macro_f1,0.8166555389,0.8915091587,7.48536198,new_inference
+resnet18,ResNet18,123,bin_flip,medium,1,0.05,balanced_accuracy,0.8391747149,0.8774332636,3.82585487,new_inference
+resnet18,ResNet18,2026,bin_flip,medium,1,0.05,accuracy,0.9570211618,0.9783756697,2.135450796,new_inference
+resnet18,ResNet18,2026,bin_flip,medium,1,0.05,macro_f1,0.8218651174,0.8880141331,6.614901573,new_inference
+resnet18,ResNet18,2026,bin_flip,medium,1,0.05,balanced_accuracy,0.8402897752,0.8775136953,3.72239201,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,heavy,2,0.1,accuracy,0.9379023243,0.9681609683,3.025864395,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,heavy,2,0.1,macro_f1,0.65867313,0.8038636153,14.51904852,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,bin_flip,heavy,2,0.1,balanced_accuracy,0.6884965176,0.7821177848,9.362126722,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,heavy,2,0.1,accuracy,0.9149674286,0.9673129553,5.234552673,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,heavy,2,0.1,macro_f1,0.6363827769,0.8064110984,17.00283215,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,bin_flip,heavy,2,0.1,balanced_accuracy,0.6817622575,0.7862752647,10.45130072,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,heavy,2,0.1,accuracy,0.9428362179,0.9677755078,2.493928998,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,heavy,2,0.1,macro_f1,0.6380091805,0.804565105,16.65559245,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,bin_flip,heavy,2,0.1,balanced_accuracy,0.6428634168,0.7879801505,14.51167337,new_inference
+resnet18,ResNet18,42,bin_flip,heavy,2,0.1,accuracy,0.9480784797,0.9786840381,3.060555834,new_inference
+resnet18,ResNet18,42,bin_flip,heavy,2,0.1,macro_f1,0.7184886747,0.8882421734,16.97534987,new_inference
+resnet18,ResNet18,42,bin_flip,heavy,2,0.1,balanced_accuracy,0.726076181,0.8748348081,14.87586271,new_inference
+resnet18,ResNet18,123,bin_flip,heavy,2,0.1,accuracy,0.9486181243,0.978645492,3.002736769,new_inference
+resnet18,ResNet18,123,bin_flip,heavy,2,0.1,macro_f1,0.7247166662,0.8915091587,16.67924925,new_inference
+resnet18,ResNet18,123,bin_flip,heavy,2,0.1,balanced_accuracy,0.7348758294,0.8774332636,14.25574342,new_inference
+resnet18,ResNet18,2026,bin_flip,heavy,2,0.1,accuracy,0.9433758625,0.9783756697,3.499980727,new_inference
+resnet18,ResNet18,2026,bin_flip,heavy,2,0.1,macro_f1,0.7048803175,0.8880141331,18.31338156,new_inference
+resnet18,ResNet18,2026,bin_flip,heavy,2,0.1,balanced_accuracy,0.7215685281,0.8775136953,15.59451672,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,light,0,2,accuracy,0.9633041668,0.9681609683,0.4856801449,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,light,0,2,macro_f1,0.7883422568,0.8038636153,1.552135844,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,light,0,2,balanced_accuracy,0.7578399302,0.7821177848,2.427785461,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,light,0,2,accuracy,0.9628030683,0.9673129553,0.450988706,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,light,0,2,macro_f1,0.7957492476,0.8064110984,1.066185075,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,light,0,2,balanced_accuracy,0.7718706958,0.7862752647,1.440456886,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,light,0,2,accuracy,0.9642678179,0.9677755078,0.3507689936,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,light,0,2,macro_f1,0.7888711436,0.804565105,1.569396136,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,light,0,2,balanced_accuracy,0.7607799311,0.7879801505,2.720021944,new_inference
+resnet18,ResNet18,42,translation,light,0,2,accuracy,0.9748679798,0.9786840381,0.3816058282,new_inference
+resnet18,ResNet18,42,translation,light,0,2,macro_f1,0.8730273806,0.8882421734,1.521479279,new_inference
+resnet18,ResNet18,42,translation,light,0,2,balanced_accuracy,0.8559530172,0.8748348081,1.888179087,new_inference
+resnet18,ResNet18,123,translation,light,0,2,accuracy,0.9757930848,0.978645492,0.28524072,new_inference
+resnet18,ResNet18,123,translation,light,0,2,macro_f1,0.8805205732,0.8915091587,1.098858543,new_inference
+resnet18,ResNet18,123,translation,light,0,2,balanced_accuracy,0.8644475199,0.8774332636,1.298574377,new_inference
+resnet18,ResNet18,2026,translation,light,0,2,accuracy,0.9760629071,0.9783756697,0.2312762595,new_inference
+resnet18,ResNet18,2026,translation,light,0,2,macro_f1,0.8782136907,0.8880141331,0.9800442424,new_inference
+resnet18,ResNet18,2026,translation,light,0,2,balanced_accuracy,0.8603211907,0.8775136953,1.719250456,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,medium,1,5,accuracy,0.9276876229,0.9681609683,4.047334541,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,medium,1,5,macro_f1,0.6321655087,0.8038636153,17.16981066,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,medium,1,5,balanced_accuracy,0.62110963,0.7821177848,16.10081548,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,medium,1,5,accuracy,0.9232162818,0.9673129553,4.409667348,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,medium,1,5,macro_f1,0.6397016046,0.8064110984,16.67094938,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,medium,1,5,balanced_accuracy,0.6297203631,0.7862752647,15.65549016,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,medium,1,5,accuracy,0.9328142466,0.9677755078,3.496126123,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,medium,1,5,macro_f1,0.6309263645,0.804565105,17.36387405,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,medium,1,5,balanced_accuracy,0.6219025685,0.7879801505,16.60775821,new_inference
+resnet18,ResNet18,42,translation,medium,1,5,accuracy,0.9389045215,0.9786840381,3.977951663,new_inference
+resnet18,ResNet18,42,translation,medium,1,5,macro_f1,0.7025279116,0.8882421734,18.57142618,new_inference
+resnet18,ResNet18,42,translation,medium,1,5,balanced_accuracy,0.7209782441,0.8748348081,15.3856564,new_inference
+resnet18,ResNet18,123,translation,medium,1,5,accuracy,0.9439925992,0.978645492,3.465289288,new_inference
+resnet18,ResNet18,123,translation,medium,1,5,macro_f1,0.7146023494,0.8915091587,17.69068093,new_inference
+resnet18,ResNet18,123,translation,medium,1,5,balanced_accuracy,0.7266054554,0.8774332636,15.08278083,new_inference
+resnet18,ResNet18,2026,translation,medium,1,5,accuracy,0.9406005474,0.9783756697,3.777512238,new_inference
+resnet18,ResNet18,2026,translation,medium,1,5,macro_f1,0.7104354157,0.8880141331,17.75787175,new_inference
+resnet18,ResNet18,2026,translation,medium,1,5,balanced_accuracy,0.7212446928,0.8775136953,15.62690024,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,heavy,2,8,accuracy,0.8897197703,0.9681609683,7.844119801,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,heavy,2,8,macro_f1,0.4688733053,0.8038636153,33.49903099,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,translation,heavy,2,8,balanced_accuracy,0.4857265686,0.7821177848,29.63912162,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,heavy,2,8,accuracy,0.8934972825,0.9673129553,7.381567282,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,heavy,2,8,macro_f1,0.4816986804,0.8064110984,32.4712418,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,translation,heavy,2,8,balanced_accuracy,0.4896568616,0.7862752647,29.66184031,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,heavy,2,8,accuracy,0.9017075897,0.9677755078,6.606791813,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,heavy,2,8,macro_f1,0.4950876821,0.804565105,30.94774229,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,translation,heavy,2,8,balanced_accuracy,0.5122329595,0.7879801505,27.57471911,new_inference
+resnet18,ResNet18,42,translation,heavy,2,8,accuracy,0.9005126624,0.9786840381,7.817137571,new_inference
+resnet18,ResNet18,42,translation,heavy,2,8,macro_f1,0.5625910635,0.8882421734,32.56511099,new_inference
+resnet18,ResNet18,42,translation,heavy,2,8,balanced_accuracy,0.6135924199,0.8748348081,26.12423882,new_inference
+resnet18,ResNet18,123,translation,heavy,2,8,accuracy,0.9104575415,0.978645492,6.818795051,new_inference
+resnet18,ResNet18,123,translation,heavy,2,8,macro_f1,0.5649274816,0.8915091587,32.65816771,new_inference
+resnet18,ResNet18,123,translation,heavy,2,8,balanced_accuracy,0.607240701,0.8774332636,27.01925626,new_inference
+resnet18,ResNet18,2026,translation,heavy,2,8,accuracy,0.8971591566,0.9783756697,8.121651312,new_inference
+resnet18,ResNet18,2026,translation,heavy,2,8,macro_f1,0.5503980661,0.8880141331,33.76160671,new_inference
+resnet18,ResNet18,2026,translation,heavy,2,8,balanced_accuracy,0.5961823012,0.8775136953,28.13313941,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,light,0,8,accuracy,0.966118028,0.9681609683,0.2042940292,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,light,0,8,macro_f1,0.7921519804,0.8038636153,1.17116349,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,light,0,8,balanced_accuracy,0.7590922821,0.7821177848,2.302550277,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,light,0,8,accuracy,0.9650387388,0.9673129553,0.2274216552,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,light,0,8,macro_f1,0.7875699839,0.8064110984,1.884111451,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,light,0,8,balanced_accuracy,0.7594944811,0.7862752647,2.678078363,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,light,0,8,accuracy,0.9664263963,0.9677755078,0.1349111514,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,light,0,8,macro_f1,0.7913267542,0.804565105,1.323835084,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,light,0,8,balanced_accuracy,0.7569354223,0.7879801505,3.10447283,new_inference
+resnet18,ResNet18,42,local_missing,light,0,8,accuracy,0.9766410978,0.9786840381,0.2042940292,new_inference
+resnet18,ResNet18,42,local_missing,light,0,8,macro_f1,0.874126768,0.8882421734,1.411540541,new_inference
+resnet18,ResNet18,42,local_missing,light,0,8,balanced_accuracy,0.8508210877,0.8748348081,2.401372041,new_inference
+resnet18,ResNet18,123,local_missing,light,0,8,accuracy,0.9761785453,0.978645492,0.2466946768,new_inference
+resnet18,ResNet18,123,local_missing,light,0,8,macro_f1,0.8733842165,0.8915091587,1.812494217,new_inference
+resnet18,ResNet18,123,local_missing,light,0,8,balanced_accuracy,0.8478057418,0.8774332636,2.962752187,new_inference
+resnet18,ResNet18,2026,local_missing,light,0,8,accuracy,0.9770265582,0.9783756697,0.1349111514,new_inference
+resnet18,ResNet18,2026,local_missing,light,0,8,macro_f1,0.8780270096,0.8880141331,0.9987123507,new_inference
+resnet18,ResNet18,2026,local_missing,light,0,8,balanced_accuracy,0.856092073,0.8775136953,2.142162223,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,medium,1,16,accuracy,0.9608757661,0.9681609683,0.7285202174,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,medium,1,16,macro_f1,0.758322492,0.8038636153,4.554112328,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,medium,1,16,balanced_accuracy,0.7076595005,0.7821177848,7.445828437,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,medium,1,16,accuracy,0.959912115,0.9673129553,0.7400840304,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,medium,1,16,macro_f1,0.7537747945,0.8064110984,5.263630389,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,medium,1,16,balanced_accuracy,0.7032620532,0.7862752647,8.301321152,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,medium,1,16,accuracy,0.9610299503,0.9677755078,0.6745557569,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,medium,1,16,macro_f1,0.7613719211,0.804565105,4.319318385,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,medium,1,16,balanced_accuracy,0.716838227,0.7879801505,7.114192358,new_inference
+resnet18,ResNet18,42,local_missing,medium,1,16,accuracy,0.9710133755,0.9786840381,0.7670662606,new_inference
+resnet18,ResNet18,42,local_missing,medium,1,16,macro_f1,0.8396761058,0.8882421734,4.856606761,new_inference
+resnet18,ResNet18,42,local_missing,medium,1,16,balanced_accuracy,0.8004048475,0.8748348081,7.442996054,new_inference
+resnet18,ResNet18,123,local_missing,medium,1,16,accuracy,0.9711290136,0.978645492,0.7516478433,new_inference
+resnet18,ResNet18,123,local_missing,medium,1,16,macro_f1,0.8451503529,0.8915091587,4.635880576,new_inference
+resnet18,ResNet18,123,local_missing,medium,1,16,balanced_accuracy,0.7998266799,0.8774332636,7.760658375,new_inference
+resnet18,ResNet18,2026,local_missing,medium,1,16,accuracy,0.9713988359,0.9783756697,0.6976833828,new_inference
+resnet18,ResNet18,2026,local_missing,medium,1,16,macro_f1,0.8305836344,0.8880141331,5.743049876,new_inference
+resnet18,ResNet18,2026,local_missing,medium,1,16,balanced_accuracy,0.7838266796,0.8775136953,9.368701567,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,heavy,2,24,accuracy,0.9524341826,0.9681609683,1.572678565,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,heavy,2,24,macro_f1,0.6892569056,0.8038636153,11.46067097,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,local_missing,heavy,2,24,balanced_accuracy,0.6221024088,0.7821177848,16.0015376,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,heavy,2,24,accuracy,0.9523956366,0.9673129553,1.491731874,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,heavy,2,24,macro_f1,0.6770246097,0.8064110984,12.93864887,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,local_missing,heavy,2,24,balanced_accuracy,0.6021190929,0.7862752647,18.41561718,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,heavy,2,24,accuracy,0.9521643603,0.9677755078,1.561114752,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,heavy,2,24,macro_f1,0.6800141928,0.804565105,12.45509122,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,local_missing,heavy,2,24,balanced_accuracy,0.6076840803,0.7879801505,18.02960703,new_inference
+resnet18,ResNet18,42,local_missing,heavy,2,24,accuracy,0.9612226805,0.9786840381,1.746135759,new_inference
+resnet18,ResNet18,42,local_missing,heavy,2,24,macro_f1,0.7753688091,0.8882421734,11.28733643,new_inference
+resnet18,ResNet18,42,local_missing,heavy,2,24,balanced_accuracy,0.7151322217,0.8748348081,15.97025863,new_inference
+resnet18,ResNet18,123,local_missing,heavy,2,24,accuracy,0.9618008711,0.978645492,1.68446209,new_inference
+resnet18,ResNet18,123,local_missing,heavy,2,24,macro_f1,0.7783377469,0.8915091587,11.31714118,new_inference
+resnet18,ResNet18,123,local_missing,heavy,2,24,balanced_accuracy,0.7094973119,0.8774332636,16.79359518,new_inference
+resnet18,ResNet18,2026,local_missing,heavy,2,24,accuracy,0.9613768647,0.9783756697,1.699880507,new_inference
+resnet18,ResNet18,2026,local_missing,heavy,2,24,macro_f1,0.7633327649,0.8880141331,12.46813683,new_inference
+resnet18,ResNet18,2026,local_missing,heavy,2,24,balanced_accuracy,0.6949518773,0.8775136953,18.2561818,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,light,0,2,accuracy,0.9691631654,0.9681609683,-0.1002197124,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,light,0,2,macro_f1,0.8077420141,0.8038636153,-0.387839882,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,light,0,2,balanced_accuracy,0.7904033069,0.7821177848,-0.8285522081,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,light,0,2,accuracy,0.9681609683,0.9673129553,-0.08480129515,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,light,0,2,macro_f1,0.8020576757,0.8064110984,0.435342267,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,light,0,2,balanced_accuracy,0.780875175,0.7862752647,0.540008967,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,light,0,2,accuracy,0.9684693366,0.9677755078,-0.06938287785,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,light,0,2,macro_f1,0.8088269301,0.804565105,-0.4261825097,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,light,0,2,balanced_accuracy,0.7951873227,0.7879801505,-0.7207172129,new_inference
+resnet18,ResNet18,42,rotation,light,0,2,accuracy,0.9790309525,0.9786840381,-0.03469143892,new_inference
+resnet18,ResNet18,42,rotation,light,0,2,macro_f1,0.8899124929,0.8882421734,-0.1670319475,new_inference
+resnet18,ResNet18,42,rotation,light,0,2,balanced_accuracy,0.8770064178,0.8748348081,-0.2171609692,new_inference
+resnet18,ResNet18,123,rotation,light,0,2,accuracy,0.978645492,0.978645492,-1.110223025e-14,new_inference
+resnet18,ResNet18,123,rotation,light,0,2,macro_f1,0.8911806974,0.8915091587,0.03284612469,new_inference
+resnet18,ResNet18,123,rotation,light,0,2,balanced_accuracy,0.8785807498,0.8774332636,-0.1147486127,new_inference
+resnet18,ResNet18,2026,rotation,light,0,2,accuracy,0.978645492,0.9783756697,-0.02698223027,new_inference
+resnet18,ResNet18,2026,rotation,light,0,2,macro_f1,0.8886295492,0.8880141331,-0.06154160162,new_inference
+resnet18,ResNet18,2026,rotation,light,0,2,balanced_accuracy,0.8761880044,0.8775136953,0.1325690836,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,medium,1,5,accuracy,0.9696257179,0.9681609683,-0.1464749643,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,medium,1,5,macro_f1,0.8087880752,0.8038636153,-0.49244599,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,medium,1,5,balanced_accuracy,0.7993129965,0.7821177848,-1.719521167,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,medium,1,5,accuracy,0.9688933431,0.9673129553,-0.1580387773,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,medium,1,5,macro_f1,0.8143046258,0.8064110984,-0.7893527458,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,medium,1,5,balanced_accuracy,0.7962562362,0.7862752647,-0.9980971463,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,medium,1,5,accuracy,0.9689704352,0.9677755078,-0.1194927341,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,medium,1,5,macro_f1,0.8069909049,0.804565105,-0.2425799885,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,medium,1,5,balanced_accuracy,0.7994044253,0.7879801505,-1.142427475,new_inference
+resnet18,ResNet18,42,rotation,medium,1,5,accuracy,0.9783756697,0.9786840381,0.0308368346,new_inference
+resnet18,ResNet18,42,rotation,medium,1,5,macro_f1,0.8848956083,0.8882421734,0.334656505,new_inference
+resnet18,ResNet18,42,rotation,medium,1,5,balanced_accuracy,0.8691864574,0.8748348081,0.564835066,new_inference
+resnet18,ResNet18,123,rotation,medium,1,5,accuracy,0.9779131172,0.978645492,0.07323748217,new_inference
+resnet18,ResNet18,123,rotation,medium,1,5,macro_f1,0.8861339845,0.8915091587,0.5375174143,new_inference
+resnet18,ResNet18,123,rotation,medium,1,5,balanced_accuracy,0.8728057103,0.8774332636,0.4627553332,new_inference
+resnet18,ResNet18,2026,rotation,medium,1,5,accuracy,0.9793007748,0.9783756697,-0.0925105038,new_inference
+resnet18,ResNet18,2026,rotation,medium,1,5,macro_f1,0.8938020213,0.8880141331,-0.5787888205,new_inference
+resnet18,ResNet18,2026,rotation,medium,1,5,balanced_accuracy,0.8804571167,0.8775136953,-0.294342148,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,heavy,2,10,accuracy,0.9681224222,0.9681609683,0.003854604325,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,heavy,2,10,macro_f1,0.8025995525,0.8038636153,0.1264062707,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,42,rotation,heavy,2,10,balanced_accuracy,0.787811524,0.7821177848,-0.5693739172,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,heavy,2,10,accuracy,0.9684693366,0.9673129553,-0.1156381297,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,heavy,2,10,macro_f1,0.8114599561,0.8064110984,-0.5048857709,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,123,rotation,heavy,2,10,balanced_accuracy,0.7907190656,0.7862752647,-0.4443800887,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,heavy,2,10,accuracy,0.9676213237,0.9677755078,0.0154184173,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,heavy,2,10,macro_f1,0.8049189477,0.804565105,-0.03538427439,new_inference
+standard_shufflenet_v2,Standard ShuffleNetV2,2026,rotation,heavy,2,10,balanced_accuracy,0.7923939437,0.7879801505,-0.4413793112,new_inference
+resnet18,ResNet18,42,rotation,heavy,2,10,accuracy,0.9779516633,0.9786840381,0.07323748217,new_inference
+resnet18,ResNet18,42,rotation,heavy,2,10,macro_f1,0.8859410515,0.8882421734,0.2301121872,new_inference
+resnet18,ResNet18,42,rotation,heavy,2,10,balanced_accuracy,0.8722968389,0.8748348081,0.253796923,new_inference
+resnet18,ResNet18,123,rotation,heavy,2,10,accuracy,0.9781443935,0.978645492,0.05010985622,new_inference
+resnet18,ResNet18,123,rotation,heavy,2,10,macro_f1,0.8915750398,0.8915091587,-0.006588112962,new_inference
+resnet18,ResNet18,123,rotation,heavy,2,10,balanced_accuracy,0.8741994221,0.8774332636,0.3233841538,new_inference
+resnet18,ResNet18,2026,rotation,heavy,2,10,accuracy,0.977681841,0.9783756697,0.06938287785,new_inference
+resnet18,ResNet18,2026,rotation,heavy,2,10,macro_f1,0.8888771373,0.8880141331,-0.0863004177,new_inference
+resnet18,ResNet18,2026,rotation,heavy,2,10,balanced_accuracy,0.8755917915,0.8775136953,0.1921903762,new_inference

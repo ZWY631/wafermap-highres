@@ -1,0 +1,48 @@
+{
+  "analysis_id": "20260729_final_vs_resnet18_statistical_significance",
+  "source_evaluation_id": "20260729_highres_ce_multiseed_final_test",
+  "analysis_type": "post_test_paired_statistical_comparison",
+  "new_model_inference_performed": false,
+  "wafer_image_dataset_loaded": false,
+  "saved_prediction_files_loaded": true,
+  "test_predictions_reused": true,
+  "baseline": "ResNet18 Baseline",
+  "final_model": "HighRes ShuffleNetV2 + CrossEntropyLoss without ECA",
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "test_samples": 25943,
+  "baseline_training_runs": 1,
+  "final_training_runs": 3,
+  "architecture_level_random_seed_inference": false,
+  "alpha": 0.05,
+  "multiple_comparison_adjustment": "Holm correction across three seeds",
+  "accuracy_test": "two-sided exact McNemar test",
+  "effect_interval": {
+    "method": "paired bootstrap stratified by true class",
+    "confidence_level": 0.95,
+    "replicates_per_seed": 10000
+  },
+  "macro_f1_test": {
+    "method": "two-sided paired approximate randomization test",
+    "replicates_per_seed": 10000,
+    "plus_one_correction": true
+  },
+  "accuracy_delta_percentage_points": {
+    "42": 0.16960259029410452,
+    "123": 0.1618933816443735,
+    "2026": 0.16574798596924456
+  },
+  "macro_f1_delta_percentage_points": {
+    "42": 1.525552963392629,
+    "123": 1.155432396445344,
+    "2026": 1.454978858599254
+  },
+  "accuracy_all_seeds_significant_after_holm": true,
+  "macro_f1_all_seeds_significant_after_holm": true,
+  "accuracy_all_bootstrap_intervals_above_zero": true,
+  "macro_f1_all_bootstrap_intervals_above_zero": true,
+  "interpretation_scope": "Tests quantify paired prediction differences conditional on the saved trained models. Because only one ResNet18 training run is available, they do not estimate full architecture-level training-seed uncertainty. The fixed WM-811K benchmark split also had historical baseline access and is not an untouched external holdout."
+}

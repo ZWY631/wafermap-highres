@@ -1,0 +1,46 @@
+model_id,model,metric,scope,conditions,mean_perturbed_value,mean_degradation_from_clean_pp,condition_std_degradation_pp,worst_degradation_from_clean_pp
+highres_shufflenet_v2,HighRes ShuffleNetV2,accuracy,all_12_conditions,12,0.9672519241,1.308959385,1.401620289,3.79678526
+highres_shufflenet_v2,HighRes ShuffleNetV2,accuracy,bin_flip,3,0.9562245436,2.411697439,1.361839582,3.316244587
+highres_shufflenet_v2,HighRes ShuffleNetV2,accuracy,translation,3,0.9604560425,1.988547542,1.78207285,3.79678526
+highres_shufflenet_v2,HighRes ShuffleNetV2,accuracy,local_missing,3,0.9724310133,0.7910504653,0.674623464,1.511004895
+highres_shufflenet_v2,HighRes ShuffleNetV2,accuracy,rotation,3,0.979896097,0.04454209442,0.0467051472,0.08223155893
+highres_shufflenet_v2,HighRes ShuffleNetV2,macro_f1,all_12_conditions,12,0.8403669337,6.166178712,7.124494028,21.74024213
+highres_shufflenet_v2,HighRes ShuffleNetV2,macro_f1,bin_flip,3,0.8124341336,8.959458716,7.082572748,16.15848057
+highres_shufflenet_v2,HighRes ShuffleNetV2,macro_f1,translation,3,0.7952707438,10.6757977,10.51719075,21.74024213
+highres_shufflenet_v2,HighRes ShuffleNetV2,macro_f1,local_missing,3,0.853789807,4.823891375,4.478966919,9.754173857
+highres_shufflenet_v2,HighRes ShuffleNetV2,macro_f1,rotation,3,0.8999730503,0.2055670514,0.3625543351,0.5689015379
+highres_shufflenet_v2,HighRes ShuffleNetV2,balanced_accuracy,all_12_conditions,12,0.8302457133,6.090503068,7.182868269,21.10577556
+highres_shufflenet_v2,HighRes ShuffleNetV2,balanced_accuracy,bin_flip,3,0.8330577914,5.809295255,7.428064488,14.02953949
+highres_shufflenet_v2,HighRes ShuffleNetV2,balanced_accuracy,translation,3,0.7840641451,10.70865989,10.07536005,21.10577556
+highres_shufflenet_v2,HighRes ShuffleNetV2,balanced_accuracy,local_missing,3,0.8166710767,7.447966727,6.571331335,14.69322437
+highres_shufflenet_v2,HighRes ShuffleNetV2,balanced_accuracy,rotation,3,0.88718984,0.3960904032,0.6165413898,0.8912312178
+standard_shufflenet_v2,Standard ShuffleNetV2,accuracy,all_12_conditions,12,0.951070081,1.667972949,2.284415336,7.277492965
+standard_shufflenet_v2,Standard ShuffleNetV2,accuracy,bin_flip,3,0.9472904273,2.045938318,1.769079245,3.584782022
+standard_shufflenet_v2,Standard ShuffleNetV2,accuracy,translation,3,0.9287797608,3.897004972,3.425009415,7.277492965
+standard_shufflenet_v2,Standard ShuffleNetV2,accuracy,local_missing,3,0.9595994638,0.81503467,0.6820753949,1.54184173
+standard_shufflenet_v2,Standard ShuffleNetV2,accuracy,rotation,3,0.9686106721,-0.08608616326,0.0546182305,-0.03212170271
+standard_shufflenet_v2,Standard ShuffleNetV2,macro_f1,all_12_conditions,12,0.7295096338,7.543697238,10.09056164,32.30600503
+standard_shufflenet_v2,Standard ShuffleNetV2,macro_f1,bin_flip,3,0.7313809675,7.356563866,8.001505331,16.05915771
+standard_shufflenet_v2,Standard ShuffleNetV2,macro_f1,translation,3,0.635712866,16.92337403,15.45555867,32.30600503
+standard_shufflenet_v2,Standard ShuffleNetV2,macro_f1,local_missing,3,0.7434237371,6.152286909,5.554345605,12.28480369
+standard_shufflenet_v2,Standard ShuffleNetV2,macro_f1,rotation,3,0.8075209647,-0.2574358471,0.2171834275,-0.1262267082
+standard_shufflenet_v2,Standard ShuffleNetV2,balanced_accuracy,all_12_conditions,12,0.7148141972,7.06435362,9.579560121,28.95856035
+standard_shufflenet_v2,Standard ShuffleNetV2,balanced_accuracy,bin_flip,3,0.7461022273,3.935550607,6.540504682,11.44170027
+standard_shufflenet_v2,Standard ShuffleNetV2,balanced_accuracy,translation,3,0.6278710565,15.75866769,13.38492199,28.95856035
+standard_shufflenet_v2,Standard ShuffleNetV2,balanced_accuracy,local_missing,3,0.6927986164,9.265911693,7.529683556,17.48225394
+standard_shufflenet_v2,Standard ShuffleNetV2,balanced_accuracy,rotation,3,0.7924848884,-0.7027155065,0.5111603289,-0.3364201514
+resnet18,ResNet18,accuracy,all_12_conditions,12,0.9619614797,1.66069203,2.278424512,7.585861311
+resnet18,ResNet18,accuracy,bin_flip,3,0.9598650032,1.870339676,1.510975578,3.187757777
+resnet18,ResNet18,accuracy,translation,3,0.9398167778,3.875162215,3.645116475,7.585861311
+resnet18,ResNet18,accuracy,local_missing,3,0.9697542047,0.8814195223,0.7674342,1.710159452
+resnet18,ResNet18,accuracy,rotation,3,0.9784099329,0.01584670667,0.04365401246,0.06424340541
+resnet18,ResNet18,macro_f1,all_12_conditions,12,0.8097210303,7.953412476,10.29538723,32.9949618
+resnet18,ResNet18,macro_f1,bin_flip,3,0.805975352,8.327980303,8.311073582,17.32266023
+resnet18,ResNet18,macro_f1,translation,3,0.7152493258,17.40058293,15.90607969,32.9949618
+resnet18,ResNet18,macro_f1,local_missing,3,0.8286652676,6.058988751,5.211286706,11.69087148
+resnet18,ResNet18,macro_f1,rotation,3,0.8889941758,0.02609792565,0.0832748549,0.09779503292
+resnet18,ResNet18,balanced_accuracy,all_12_conditions,12,0.8009067837,7.568713859,8.954357592,27.0922115
+resnet18,ResNet18,balanced_accuracy,bin_flip,3,0.8146008492,6.199307309,7.702636837,14.90870762
+resnet18,ResNet18,balanced_accuracy,translation,3,0.7296183936,14.69755288,12.7415608,27.0922115
+resnet18,ResNet18,balanced_accuracy,local_missing,3,0.7842620578,9.233186451,7.308261247,17.00667854
+resnet18,ResNet18,balanced_accuracy,rotation,3,0.8751458343,0.1448088006,0.183051779,0.256457151

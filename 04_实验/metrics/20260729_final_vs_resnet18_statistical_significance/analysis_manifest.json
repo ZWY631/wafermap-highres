@@ -1,0 +1,33 @@
+{
+  "analysis_id": "20260729_final_vs_resnet18_statistical_significance",
+  "created_at": "2026-07-29T18:10:26+08:00",
+  "new_model_inference_performed": false,
+  "wafer_image_dataset_loaded": false,
+  "saved_prediction_files_loaded": true,
+  "script": "03_代码/scripts/analyze_final_vs_resnet18_significance.py",
+  "script_sha256": "5961aead3c1f01ce86419c320de6fdfca5d7182fcb59521ea5e9939967c99031",
+  "input_sha256": {
+    "04_实验/metrics/resnet18_baseline_full_predictions.csv": "1e64acde099bafaa5e1e3cd6c4460cd43c476ded886216f8c02196b942cecd68",
+    "04_实验/metrics/resnet18_baseline_full_test_summary.json": "b77c5d3342db482d3d31d7473fca1f23745fd80be9b2492c7ff6e61d9cf8b7d8",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/artifact_manifest.json": "70d62a8d3f122871bedb609000dbde71d6238b5f69dcf75dfc587bb83643d33c",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/test_per_seed_summary.csv": "4a1669cac01e0c3e7be4c2d5ef0ff8a856228767ecc063b98b5a3177e1ab930c",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed42.csv": "da5e5f43339e538efd40797de3e2cd6abbacb7c5fec07cac956d72aa32cdfc21",
+    "05_结果/predictions/20260729_highres_ce_multiseed_final_test/predictions_seed42.csv": "da5e5f43339e538efd40797de3e2cd6abbacb7c5fec07cac956d72aa32cdfc21",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed123.csv": "ac79d156b6aabd54a33c9447c2b8dba94b6815447c6320b46672ba6722357dac",
+    "05_结果/predictions/20260729_highres_ce_multiseed_final_test/predictions_seed123.csv": "ac79d156b6aabd54a33c9447c2b8dba94b6815447c6320b46672ba6722357dac",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed2026.csv": "1242267517014cf7ca42bddea74e04b8a2e20db207d34b26610a3d0785cfe40d",
+    "05_结果/predictions/20260729_highres_ce_multiseed_final_test/predictions_seed2026.csv": "1242267517014cf7ca42bddea74e04b8a2e20db207d34b26610a3d0785cfe40d"
+  },
+  "output_sha256": {
+    "04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/paired_observed_metrics.csv": "8d1ee973bd95b7b64cfb901d6169581c097228a44fd3733dbf1e67946240aae8",
+    "04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/paired_accuracy_mcnemar.csv": "65dd1c4f3d76c67511b6e4174d0e30e0f0f41c645e068666db77306b6f1a6ff9",
+    "04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/paired_bootstrap_summary.csv": "6b259f7978eabd34b74a436dc8b01c8037ec9fd8e5b1f67c105b7196a7777027",
+    "04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/paired_macro_f1_randomization.csv": "9a6bbc2c74c3331875f3a04888830cb66aca8563da5f3ba2c76de20e16986f85",
+    "04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/bootstrap_replicates.csv": "d2bfcc1403f6101d6bcb8c8f3ae3decec5ee13506c7dc0eca8d34130e38cc3fd",
+    "04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/macro_f1_randomization_replicates.csv": "5d0b0a6cb3654a0b8a7fcbee021025b738ea88bfb5edba5bc5e3ea225a9a5fbf",
+    "04_实验/metrics/20260729_final_vs_resnet18_statistical_significance/analysis_summary.json": "a67eb6d8c8ed03b7219c39f7fbb790966698675111c6a62c70b02abd18a34b49",
+    "05_结果/tables/table_final_vs_resnet18_statistical_significance.csv": "58a540390929f0b72c8e24fda51a01b1a0f1d454a1e80735a216eb5fe20e59e2",
+    "05_结果/figures/model_results/final_vs_resnet18_statistical_significance.png": "f5b0bec1f367b85d03d3fadaedbc2116910a8c9c23c6353626581b07f89c6cad",
+    "05_结果/figures/model_results/final_vs_resnet18_statistical_significance.pdf": "3530a77f1e9631d515a71e8500ef7171424286eef850378e90005a8889261fac"
+  }
+}

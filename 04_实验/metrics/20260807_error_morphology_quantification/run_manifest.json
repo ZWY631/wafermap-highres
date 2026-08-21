@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "analysis_id": "20260807_error_morphology_quantification",
+  "completed_at": "2026-08-07T12:55:18.571685+08:00",
+  "test_samples": 25943,
+  "defect_samples": 3826,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "bootstrap": {
+    "method": "stratified by true defect class with replacement",
+    "replicates": 2000,
+    "seed": 20260807
+  },
+  "protocol_sha256": "5f82c6d72e3aa8feb6d2bb1f8499186dc75ac28f60d410b0d191976db053255e",
+  "script_sha256": "5d47962645d26cffd8a61dc6168704222208d90078a8abaef498c287067878c9",
+  "durations_seconds": {
+    "morphology_and_error_table": 3.2286960830097087,
+    "summaries_and_bootstrap": 17.82793275002041,
+    "write_tables_and_figures": 2.8527952499862295,
+    "total_before_manifest": 23.909426791011356
+  },
+  "environment": {
+    "platform": "macOS-26.6-arm64-arm-64bit",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.1"
+  },
+  "interpretation_constraints": [
+    "Associations are not causal effects.",
+    "Failed-die cells are not manual pixel-level defect masks.",
+    "Class-level n=8 correlations are descriptive only."
+  ],
+  "artifact_sha256": {
+    "bootstrap_correlation_replicates.npz": "ce83a87985fde25a3fb7a0dade4fb7b2bd29ba9bf32328c8aa59103b829c1531",
+    "class_feature_error_scatter.pdf": "a28d817d94749bf7c8f44361507c97ecd211f07b8576d17becf87b602855a35e",
+    "class_feature_error_scatter.png": "f514296ec2a52d5ba822b1a31ff9e402bce7419be35b8f55fc9cf70488e6d017",
+    "class_level_descriptive_correlations.csv": "88476012e1bcdac7e9efbf8e8398556be46d2fd27dcdbb1c4f868841ce129f4a",
+    "error_group_morphology_distributions.pdf": "2c2203bac33b25f26e8f7c1c20e7213625ebfe019f2e2d699476a08fa1a57acd",
+    "error_group_morphology_distributions.png": "89e0e1be6b8f574202f624c667dfd7cc7592afed5fb47cadafc999d67d8c01e6",
+    "error_group_morphology_summary.csv": "b1a576e651061bf396e0cd3967ee427071cca717d98babf4687296b21726fe23",
+    "per_class_morphology_error_summary.csv": "eff65195896ccf05fcea7ce0eed0c54b455f8de4efe01bdd03ccff0e88fcef9c",
+    "sample_level_correlations.csv": "c1d23621a633991413380d653ddd199ce86ea0154c6623d0c74e5cbc35d3268b",
+    "sample_morphology_error_table.csv": "4b1ab57cb0e7c29e69f84dde4735ae9011475c290ff1ae09c7276f7cc9f7ab8f"
+  }
+}

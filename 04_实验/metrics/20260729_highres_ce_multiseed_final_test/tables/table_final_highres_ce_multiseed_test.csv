@@ -1,0 +1,2 @@
+model,seeds,test_samples_per_seed,parameters,accuracy_percent_mean_sd,macro_f1_percent_mean_sd,weighted_f1_percent_mean_sd,balanced_accuracy_percent_mean_sd
+HighRes ShuffleNetV2 + CE (no ECA),"42,123,2026",25943,1262397,98.0342 +/- 0.0039,90.2029 +/- 0.1965,97.9840 +/- 0.0096,89.1151 +/- 0.5514

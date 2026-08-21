@@ -1,0 +1,31 @@
+{
+  "analysis_id": "20260817_kang_vs_highres_significance_canonical",
+  "completed_at": "2026-08-17T09:38:13.900960+08:00",
+  "script_sha256": "9f0f547f3d245dace90846276c128f103701d59c4cbde5b757b12936e78b2211",
+  "samples_per_seed": 25943,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "bootstrap_replicates": 10000,
+  "randomization_replicates": 10000,
+  "holm_scope": "three seed comparisons separately for McNemar and Macro-F1 randomization",
+  "corrected_fields": {
+    "mcnemar_discordant_pairs": "number of paired correctness disagreements",
+    "macro_f1_randomization_extreme_count": "number of randomized deltas at least as extreme as observed"
+  },
+  "input_hashes": {
+    "04_实验/metrics/20260807_kang_kang_stacking_lot_reproduction/predictions_seed42.csv": "0bf6d73d14622ed95296794c0f44c9bdaec47ea2d9708d3d7bb6937515b2a831",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed42.csv": "da5e5f43339e538efd40797de3e2cd6abbacb7c5fec07cac956d72aa32cdfc21",
+    "04_实验/metrics/20260807_kang_kang_stacking_lot_reproduction/predictions_seed123.csv": "2dd8cbffcd47e9e70cf645edf3d2e1b90a38f0a37da3d733dfee83fc9feacefd",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed123.csv": "ac79d156b6aabd54a33c9447c2b8dba94b6815447c6320b46672ba6722357dac",
+    "04_实验/metrics/20260807_kang_kang_stacking_lot_reproduction/predictions_seed2026.csv": "ff11cf9098eeecacd3f7a879a091adc7445907af81d0bc6ea924b97135dd6a1d",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed2026.csv": "1242267517014cf7ca42bddea74e04b8a2e20db207d34b26610a3d0785cfe40d"
+  },
+  "test_split_role": "frozen test predictions; post-test analysis only",
+  "images_or_checkpoints_loaded": false,
+  "driver_script": "03_代码/scripts/analyze_kang_vs_highres_significance_canonical.py",
+  "driver_script_sha256": "ff6830c3e6ef1f5f642654d6789705ef85ba2e3a7918c0633eb6e864e413c804",
+  "canonical_highres_source": "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions"
+}

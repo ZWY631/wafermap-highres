@@ -1,0 +1,2 @@
+accuracy_delta_pp_mean,accuracy_delta_pp_sample_std,macro_f1_delta_pp_mean,macro_f1_delta_pp_sample_std,accuracy_all_seeds_significant,macro_f1_all_seeds_significant,samples_per_seed,seeds
+0.1914453481350109,0.1413296514815006,1.629035916879836,1.173919775723705,False,False,25943,"42,123,2026"

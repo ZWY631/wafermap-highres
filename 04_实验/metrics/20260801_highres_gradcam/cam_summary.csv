@@ -1,0 +1,10 @@
+class_name,sample_role,source_index,cam_kind,target_class,array_path,cam_min,cam_max,cam_mean
+Edge-Loc,correct,243551,correct_predicted,Edge-Loc,04_实验/metrics/20260801_highres_gradcam/cam_arrays/edge_loc_correct_predicted.npy,0.0,1.0,0.45785772800445557
+Edge-Loc,error,426208,error_predicted_none,none,04_实验/metrics/20260801_highres_gradcam/cam_arrays/edge_loc_error_predicted_none.npy,0.0,0.0,0.0
+Edge-Loc,error,426208,error_true_class,Edge-Loc,04_实验/metrics/20260801_highres_gradcam/cam_arrays/edge_loc_error_true_class.npy,0.0,1.0,0.4561646282672882
+Loc,correct,681526,correct_predicted,Loc,04_实验/metrics/20260801_highres_gradcam/cam_arrays/loc_correct_predicted.npy,0.0,1.0,0.46463480591773987
+Loc,error,640999,error_predicted_none,none,04_实验/metrics/20260801_highres_gradcam/cam_arrays/loc_error_predicted_none.npy,0.0,0.0,0.0
+Loc,error,640999,error_true_class,Loc,04_实验/metrics/20260801_highres_gradcam/cam_arrays/loc_error_true_class.npy,0.0,1.0,0.5337327122688293
+Scratch,correct,744555,correct_predicted,Scratch,04_实验/metrics/20260801_highres_gradcam/cam_arrays/scratch_correct_predicted.npy,0.0,1.0,0.092598095536232
+Scratch,error,5226,error_predicted_none,none,04_实验/metrics/20260801_highres_gradcam/cam_arrays/scratch_error_predicted_none.npy,0.0,0.0,0.0
+Scratch,error,5226,error_true_class,Scratch,04_实验/metrics/20260801_highres_gradcam/cam_arrays/scratch_error_true_class.npy,0.0,1.0,0.04230654984712601

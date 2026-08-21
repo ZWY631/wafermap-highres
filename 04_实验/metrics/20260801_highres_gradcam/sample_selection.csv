@@ -1,0 +1,4 @@
+class_name,class_id,correct_source_index,correct_confidence_seed42,correct_class_confidence_median,error_source_index,error_predicted_label,error_confidence_seed42,error_mean_confidence_three_seeds,error_selection_label
+Edge-Loc,2,243551,0.9807288,0.9807288,426208,none,0.84108764,0.81108023,50th percentile
+Loc,4,681526,0.96014345,0.96014345,640999,none,0.9389054,0.87964038,50th percentile
+Scratch,7,744555,0.9510585,0.95494675,5226,none,0.80977726,0.83163644,50th percentile

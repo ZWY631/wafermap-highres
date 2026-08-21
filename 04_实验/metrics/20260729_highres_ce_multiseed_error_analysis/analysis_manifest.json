@@ -1,0 +1,40 @@
+{
+  "analysis_id": "20260729_highres_ce_multiseed_error_analysis",
+  "created_at": "2026-07-29T16:17:32+08:00",
+  "source_evaluation_id": "20260729_highres_ce_multiseed_final_test",
+  "test_inference_performed": false,
+  "script": "03_代码/scripts/analyze_final_errors.py",
+  "script_sha256": "93b60b45642c00f4358222969eb13b946dba9322e32bf99d6a6df31120cdc651",
+  "input_sha256": {
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/artifact_manifest.json": "70d62a8d3f122871bedb609000dbde71d6238b5f69dcf75dfc587bb83643d33c",
+    "00_项目管理/20260729_最终模型冻结清单.json": "c682922b1c291f03a41a81e5d15ebfe08e4456e77c816f7943041fc11fcef8db",
+    "02_数据/processed/wm811k_labeled_64x64/images_uint8.npy": "ec496dd8a5cdb2f83c54a048497d1f6d77e64ae74efd495c36456629c9cf9aa3",
+    "02_数据/processed/wm811k_labeled_64x64/metadata.csv": "b6b1e0c2d819c60aa879e50015408161324616cbe5d928f4001d6609a7c9e681",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed42.csv": "da5e5f43339e538efd40797de3e2cd6abbacb7c5fec07cac956d72aa32cdfc21",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed123.csv": "ac79d156b6aabd54a33c9447c2b8dba94b6815447c6320b46672ba6722357dac",
+    "04_实验/metrics/20260729_highres_ce_multiseed_final_test/predictions/predictions_seed2026.csv": "1242267517014cf7ca42bddea74e04b8a2e20db207d34b26610a3d0785cfe40d"
+  },
+  "output_sha256": {
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/per_seed_error_summary.csv": "bb3938ddb269b4c7fa46a683c41253491ec67984d824722e798bb7f88976ef92",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/error_stability_summary.csv": "25db159d1be379239a7bf13d53e0be68c812e17fd4d8d4e8267b3aec3bd9a241",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/error_overlap_exact.csv": "65c131e0fbfda9960af5e1fcfc4b43c25f70c839d31c4c6867862926c8a4ac45",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/per_class_error_summary.csv": "39cbad0f9b8d9807a89dcc22aca3f1680b814f05cbb898f6d4114c3807154db9",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/error_pair_by_seed.csv": "209ca3d05e7f90c4790c294b11e95384455ee4327104135d1a968c6f2fa3573d",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/error_pair_aggregate.csv": "c77d2d179044fa2e6b3e6ce0cb9118abffd100e000f4c39b7360ba7ab6cc7f43",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/sample_error_consensus.csv": "ec27aebf2ed9b495a230bb4a95553b033973dc29995d9645585b0309ed93ccd4",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/common_errors_all_seeds.csv": "d00d7d00f7b20dfad395e3997272816402485d49a3f172f5375d8db501765963",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/unanimous_error_pairs.csv": "393ca0757a6aaa62f10e9aaf5445c8faf1accc91486e2e238a2f7b3bbe268f5f",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/representative_error_samples.csv": "f0ea6f7f1c70994956afc2e8b68c2ddf23700119cd82c2c9f0ca1e445ea5d465",
+    "04_实验/metrics/20260729_highres_ce_multiseed_error_analysis/analysis_summary.json": "449bc18b08d2a5a01a7a790baf34796a274a17259682a3a20db2a9421c622d7c",
+    "05_结果/tables/table_final_error_stability.csv": "25db159d1be379239a7bf13d53e0be68c812e17fd4d8d4e8267b3aec3bd9a241",
+    "05_结果/tables/table_final_error_by_class.csv": "39cbad0f9b8d9807a89dcc22aca3f1680b814f05cbb898f6d4114c3807154db9",
+    "05_结果/tables/table_final_error_pairs_multiseed.csv": "2d5d5a858fdbfe5df78109c74c58ba667fe16d727abdf7b24538ca7e3185cb4f",
+    "05_结果/tables/table_final_unanimous_error_pairs.csv": "6f11bd136afc7785490d68fe345dde16c2c78f454b5db866ecd26f64bb99e46f",
+    "05_结果/figures/model_results/final_highres_ce_common_error_rate_by_class.png": "dad084d36f6a1615a876dbff113ca9bee53bbaf3addbac742da39ad9293c5c9a",
+    "05_结果/figures/model_results/final_highres_ce_common_error_rate_by_class.pdf": "19e4f0dc1dffe487d001988dbc96298bd9628c8e8057138b988c1a013735b809",
+    "05_结果/figures/model_results/final_highres_ce_top_error_pairs.png": "8af4959bad27718cb0f784891e1a3fd42410c0a2fcd07ca05976ac54dee06e1c",
+    "05_结果/figures/model_results/final_highres_ce_top_error_pairs.pdf": "04647891f9d51f0a722b635947257bb359421db35f8457649cc618e80459d64d",
+    "05_结果/figures/model_results/final_highres_ce_unanimous_error_examples.png": "22c716559f204d90a41b0cd4c1bdd4a58bae04284468437b41af172acc983d12",
+    "05_结果/figures/model_results/final_highres_ce_unanimous_error_examples.pdf": "3a7ab440f919347d77c1a818514da1e4a8bd64fdba8999816ce45753ff7810fe"
+  }
+}

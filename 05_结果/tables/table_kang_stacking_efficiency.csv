@@ -1,0 +1,3 @@
+branch,parameter_count,parameters_million,flops,flops_million,checkpoint_mib,output_shape
+mfe,25353,0.025353,50176,0.050176,0.09932422637939453,"(1, 9)"
+cnn,14718153,14.718153,2496144384,2496.144384,56.153700828552246,"(1, 9)"

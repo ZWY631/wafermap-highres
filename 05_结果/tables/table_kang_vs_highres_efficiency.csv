@@ -1,0 +1,4 @@
+model_or_measurement,parameters,flops,checkpoint_or_state_mib,mps_batch1_latency_ms,mps_batch128_latency_ms,mps_batch128_latency_ms_per_sample
+HighRes ShuffleNetV2,1262397,356414464,14.729033,8.628645,111.626427,0.872081
+Kang FNN + VGG16 + Ridge meta,14743677,2496194560,56.253025,1.598488,72.701262,0.567979
+Kang minus HighRes,13481280,2139780096,41.523992,-7.030157,-38.925165,-0.304102

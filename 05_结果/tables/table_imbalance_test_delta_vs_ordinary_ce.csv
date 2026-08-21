@@ -1,0 +1,19 @@
+strategy_id,strategy,class_id,class_name,support_per_seed,high_uncertainty,delta_precision_mean,delta_recall_mean,delta_f1_mean,delta_predicted_count_mean
+balanced_sampler,Balanced sampler,0,Center,644,False,-0.1465493746,0.0460662526,-0.0569696218,150.0000000000
+balanced_sampler,Balanced sampler,1,Donut,83,False,-0.0158963220,0.0080321285,-0.0055140335,2.6666666667
+balanced_sampler,Balanced sampler,2,Edge-Loc,778,False,-0.2290446204,0.0882604970,-0.0948245366,370.6666666667
+balanced_sampler,Balanced sampler,3,Edge-Ring,1452,False,-0.0147797543,0.0027548209,-0.0061186145,26.3333333333
+balanced_sampler,Balanced sampler,4,Loc,539,False,-0.3034052483,0.0995670996,-0.1114150207,309.3333333333
+balanced_sampler,Balanced sampler,5,Near-full,21,True,0.0021645022,0.0476190476,0.0243632337,1.0000000000
+balanced_sampler,Balanced sampler,6,Random,130,False,-0.0398559275,0.0128205128,-0.0148090418,8.0000000000
+balanced_sampler,Balanced sampler,7,Scratch,179,False,-0.4920714498,0.1210428305,-0.3034452918,290.0000000000
+balanced_sampler,Balanced sampler,8,none,22117,False,0.0095445712,-0.0426067429,-0.0170386922,-1158.0000000000
+weighted_ce,Weighted CE,0,Center,644,False,-0.1577853627,0.0341614907,-0.0685913747,151.3333333333
+weighted_ce,Weighted CE,1,Donut,83,False,-0.0762087972,0.0441767068,-0.0247221000,14.0000000000
+weighted_ce,Weighted CE,2,Edge-Loc,778,False,-0.2539456262,0.0685518423,-0.1185168256,389.0000000000
+weighted_ce,Weighted CE,3,Edge-Ring,1452,False,-0.0216480868,-0.0020661157,-0.0119906219,29.6666666667
+weighted_ce,Weighted CE,4,Loc,539,False,-0.3098018309,0.0871985158,-0.1196506747,304.6666666667
+weighted_ce,Weighted CE,5,Near-full,21,True,-0.0123909907,0.0317460317,0.0088425786,1.0000000000
+weighted_ce,Weighted CE,6,Random,130,False,-0.1034534765,0.0384615385,-0.0398085160,23.3333333333
+weighted_ce,Weighted CE,7,Scratch,179,False,-0.5464618481,0.1452513966,-0.3586833595,385.3333333333
+weighted_ce,Weighted CE,8,none,22117,False,0.0090986699,-0.0493587135,-0.0207926350,-1298.3333333333

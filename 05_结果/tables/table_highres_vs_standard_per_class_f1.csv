@@ -1,0 +1,10 @@
+class_name,support_per_seed,standard_shufflenet_v2_f1_mean_percent,standard_shufflenet_v2_f1_sample_std_percent,highres_shufflenet_v2_f1_mean_percent,highres_shufflenet_v2_f1_sample_std_percent,highres_gain_pp
+Center,644,90.9092,0.1540,93.2771,0.2074,2.3679
+Donut,83,84.0288,1.2738,85.4832,0.8337,1.4544
+Edge-Loc,778,77.6340,0.8322,85.6684,0.3547,8.0344
+Edge-Ring,1452,97.7034,0.3092,98.5674,0.1429,0.8640
+Loc,539,70.5409,0.2869,81.1216,0.6272,10.5807
+Near-full,21,93.7229,2.8139,95.2381,0.0000,1.5152
+Random,130,86.3124,1.3414,91.6281,0.9616,5.3156
+Scratch,179,25.0180,2.1011,81.6965,0.7473,56.6785
+none,22117,98.5823,0.0200,99.1456,0.0023,0.5633

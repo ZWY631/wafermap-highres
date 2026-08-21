@@ -1,0 +1,2 @@
+model,seeds,epochs_per_seed,best_epoch_mean_sd,best_val_loss_mean_sd,best_val_accuracy_percent_mean_sd,best_val_macro_f1_percent_mean_sd,best_val_balanced_accuracy_percent_mean_sd,training_minutes_per_seed_mean_sd
+HighRes ShuffleNetV2 + CE (no ECA),"42,123,2026",30,27.00 +/- 1.00,0.056768 +/- 0.000992,97.9592 +/- 0.0412,90.4881 +/- 0.2636,88.8801 +/- 0.3895,214.78 +/- 1.61
