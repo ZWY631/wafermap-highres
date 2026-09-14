@@ -4,13 +4,13 @@
 
 Code, fixed data split, and frozen results for the manuscript:
 
-> **Preserving Early Spatial Resolution in ShuffleNetV2 for Wafer Bin Map Failure-Pattern Classification: A Controlled Multi-Seed and Same-Protocol Domain Comparison**
+> **Preserving Early Spatial Resolution in ShuffleNetV2 for Wafer Bin Map Failure-Pattern Classification: A Controlled Multi-Seed Ablation of Downsampling and Aliasing**
 
 Under review at *Journal of Intelligent Manufacturing*.
 
 ## Abstract (short version)
 
-Wafer bin maps are small (64 × 64) discrete spatial arrays in which narrow, localized, and edge-related failure patterns occupy few cells. Standard lightweight backbones downsample these maps aggressively **before** their main feature stages. We test the hypothesis that preserving early spatial resolution improves wafer-map failure-pattern classification *without increasing model parameters*: the ShuffleNetV2 x1.0 stem is changed from a stride-two convolution plus max pooling to a stride-one convolution without initial pooling, while all subsequent stages, the 1,262,397-parameter count, cross-entropy objective, data split, and training protocol are held constant.
+Wafer bin maps are small (64 × 64) discrete spatial arrays in which narrow, localized, and edge-related failure patterns occupy few cells. Standard lightweight backbones downsample these maps aggressively **before** their main feature stages. We test the hypothesis that preserving early spatial resolution improves wafer-map failure-pattern classification *without increasing model parameters*: the ShuffleNetV2 x1.0 stem is changed from a stride-two convolution plus max pooling to a stride-one convolution without initial pooling, while all subsequent stages, the 1,262,397-parameter count, cross-entropy objective, data split, and training protocol are held constant. A zero-parameter, resolution-matched anti-aliased (binomial blur) stem isolates retained spatial resolution from aliasing; retained resolution dominates, and the cost side is reported explicitly because the stem choices span a factor of 15.75 in Conv/Linear FLOPs at identical parameter count.
 
 Across three random seeds (42, 123, 2026) on the full labeled WM-811K subset (172,950 maps, lot-disjoint split):
 
