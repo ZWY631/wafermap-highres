@@ -24,8 +24,8 @@ from datetime import datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-MD = PROJECT_ROOT / "06_论文/manuscript/06_英文论文投稿定稿版_v5.md"
-DOCX = PROJECT_ROOT / "06_论文/manuscript/06_英文论文投稿定稿版_v5.docx"
+MD = PROJECT_ROOT / "06_论文/manuscript/08_英文论文投稿定稿版_v6.md"
+DOCX = PROJECT_ROOT / "06_论文/manuscript/08_英文论文投稿定稿版_v6.docx"
 CANON_MANIFEST = (
     PROJECT_ROOT
     / "04_实验/metrics/20260817_kang_vs_highres_significance_canonical/analysis_manifest.json"
@@ -70,26 +70,49 @@ def main() -> None:
     failures: list[str] = []
 
     # ---- 1. citation integrity ----
+    # Supports both the comma form ``[12, 13]`` and the range form ``[21-30]``,
+    # and expands ranges so the first-appearance order is comparable to the
+    # reference list. ``network.conv5[0]`` and numeric intervals are excluded by
+    # requiring every number to be a listed reference.
     cited: set[int] = set()
     order: list[int] = []
     seen: set[int] = set()
-    for m in re.finditer(r"\[(\d+(?:\s*,\s*\d+)*)\]", head):
-        for n in [int(x) for x in m.group(1).split(",")]:
+    listed = {int(m.group(1)) for m in re.finditer(r"^(\d+)\. ", refs_part, re.M)}
+
+    def expand_group(group: str) -> list[int]:
+        numbers: list[int] = []
+        for piece in group.split(","):
+            piece = piece.strip()
+            if "-" in piece:
+                low, high = (int(part.strip()) for part in piece.split("-", 1))
+                numbers.extend(range(low, high + 1))
+            else:
+                numbers.append(int(piece))
+        return numbers
+
+    for m in re.finditer(r"\[(\d+(?:\s*-\s*\d+)?(?:\s*,\s*\d+(?:\s*-\s*\d+)?)*)\]", head):
+        numbers = expand_group(m.group(1))
+        if not set(numbers) <= listed:
+            continue
+        for n in numbers:
             if n == 0:
                 continue
             cited.add(n)
             if n not in seen:
                 seen.add(n)
                 order.append(n)
-    listed = {int(m.group(1)) for m in re.finditer(r"^(\d+)\. ", refs_part, re.M)}
+
     listed_counts = {}
     for m in re.finditer(r"^(\d+)\. ", refs_part, re.M):
         listed_counts[int(m.group(1))] = listed_counts.get(int(m.group(1)), 0) + 1
     duplicated = {n: c for n, c in listed_counts.items() if c > 1}
     if duplicated:
         failures.append(f"文献表存在重复编号条目：{duplicated}")
-    if cited == listed == set(range(1, 30)):
-        findings.append("引用完整性：正文引用集合 = 文献表集合 = 1..29（29 条），无孤儿引用、无重复条目。")
+    if cited == listed == set(range(1, len(listed) + 1)):
+        findings.append(
+            f"引用完整性：正文引用集合 = 文献表集合 = 1..{len(listed)}"
+            f"（{len(listed)} 条），无孤儿引用、无重复条目。"
+        )
     else:
         failures.append(f"引用不一致：cited={sorted(cited - listed)} listed-only={sorted(listed - cited)}")
     if order == sorted(order):
@@ -129,11 +152,17 @@ def main() -> None:
     findings.append(f"Word 内嵌图：检出 {embedded} 个图片对象（应为 7）。")
 
     # ---- 3. tables ----
-    expected_tables = ["1", "2", "2A", "2B", "3", "4", "5", "6", "7", "8", "9", "9A", "9B", "10", "10A", "11"]
+    expected_tables = [
+        "1", "2", "2A", "2B", "2C", "3", "4", "5", "6", "7",
+        "8", "8A", "8B", "8C", "9", "9A", "10", "11",
+    ]
     captions = re.findall(r"\*\*Table ([\dA-Z]+)\.", md_text)
     missing_tables = [t for t in expected_tables if t not in captions]
     if not missing_tables:
-        findings.append("表标题：Table 1–11、2A、2B、9A、9B 共 16 个标题齐全且位于表格上方。")
+        findings.append(
+            f"表标题：{len(expected_tables)} 个 Table 标题齐全且位于表格上方"
+            f"（1–11、2A、2B、2C、8A、8B、8C、9A）。"
+        )
     else:
         failures.append(f"缺失表标题：{missing_tables}")
 
@@ -182,6 +211,56 @@ def main() -> None:
             findings.append(f"关键数字 {token}（{label}）：正文出现 1 次。")
         else:
             failures.append(f"关键数字缺失：{token}（{label}）")
+
+    # Anti-aliasing control numbers (Sections 3.4.1 / 4.1.1.1, Tables 2C and
+    # 8C). These are cross-checked against the frozen evaluation bundle rather
+    # than only counted, so a typo in the manuscript fails the audit.
+    antialiasing_table = (
+        PROJECT_ROOT
+        / "05_结果/tables/table_stem_five_config_multiseed_test.csv"
+    )
+    antialiasing_spot = {
+        "80.4947": "S2P test Macro-F1",
+        "83.4344": "S2B test Macro-F1",
+        "2.9398": "S2B over S2P Macro-F1 gain",
+        "8.2051": "S1P over S2P Macro-F1 gain",
+        "6.7685": "S1N minus S2B Macro-F1 gap",
+        "35.3814": "S2B Scratch F1",
+        "46.3151": "S1N minus S2B Scratch F1 gap",
+        "30% to 44%": "aliasing share of the pooling penalty",
+    }
+    for token, label in antialiasing_spot.items():
+        count = md_text.count(token)
+        if count >= 1:
+            findings.append(
+                f"抗混叠关键数字 {token}（{label}）：正文出现 {count} 次。"
+            )
+        else:
+            failures.append(f"抗混叠关键数字缺失：{token}（{label}）")
+
+    if antialiasing_table.is_file():
+        rows = {
+            row["configuration_id"]: row
+            for row in read_csv(antialiasing_table)
+        }
+        for configuration_id, expected_percent in {
+            "S2P": 80.4947,
+            "S2B": 83.4344,
+            "S1N": 90.2029,
+        }.items():
+            actual = float(rows[configuration_id]["macro_f1_mean"]) * 100.0
+            if abs(actual - expected_percent) > 0.001:
+                failures.append(
+                    f"表 {antialiasing_table.name} 的 {configuration_id} "
+                    f"Macro-F1={actual:.4f}，与正文 {expected_percent} 不符。"
+                )
+            else:
+                findings.append(
+                    f"表 {antialiasing_table.name} 的 {configuration_id} "
+                    f"Macro-F1={actual:.4f} 与正文一致。"
+                )
+    else:
+        failures.append(f"缺少抗混叠结果表：{antialiasing_table.name}")
     findings.append(
         f"表 {FINAL_TABLE.name} 首行：accuracy={acc}，macro_f1={mf1}"
         "（与正文 98.0342/90.2029 交叉核对）。"
@@ -231,7 +310,7 @@ def main() -> None:
     lines = [
         "# 20260821 投稿前总审计报告",
         "",
-        f"- 审计对象：`06_英文论文投稿定稿版_v5.md` / `.docx`（29 条文献、16 表、7 图）",
+        f"- 审计对象：`08_英文论文投稿定稿版_v6.md` / `.docx`（30 条文献、17 表、7 图）",
         f"- 审计时间：{datetime.now().astimezone().isoformat(timespec='seconds')}",
         f"- 审计脚本：`03_代码/scripts/audit_presubmission.py`",
         "",

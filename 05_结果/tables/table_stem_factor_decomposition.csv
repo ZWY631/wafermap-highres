@@ -1,0 +1,4 @@
+seed,stride_main_effect,pooling_main_effect,interaction,blur_factor_effect,aliasing_share_of_pooling,cross_check_identity_residual
+42,0.054737,0.044897,-0.063227,0.019923,0.443741,0.063227
+123,0.044837,0.048549,-0.066874,0.014394,0.296482,0.066874
+2026,0.048063,0.050163,-0.066929,0.01504,0.29982,0.066929
