@@ -1,0 +1,3 @@
+stride_main_effect_pp,pooling_main_effect_pp,interaction_pp,blur_factor_effect_pp,aliasing_share_of_pooling_percent,aliasing_share_min_percent,aliasing_share_max_percent,split,seeds,source
+4.4557,4.257,-6.669,1.7224,40.4607,,,validation,3,04_实验/metrics/20260805_stem_2x2_validation_selection/aggregate_validation.csv + *blurpool*_history.csv
+4.9212,4.787,-6.5677,1.6452,34.6681,29.6482,44.3741,test,3,05_结果/tables/table_stem_factor_decomposition.csv (per-seed mean)

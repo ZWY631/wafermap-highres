@@ -1,0 +1,89 @@
+{
+ "protocol": "20260822_MixedWM38零样本迁移冻结协议.md",
+ "data_file": "/Users/mima0000/论文111/02_数据/external/mixedwm38/MixedWM38.npz",
+ "data_sha256": "a19e791c85ccd5051c080169a3d2b17902a42545cf749e9869f6c96312bcdc69",
+ "timestamp": "2026-08-22T09:25:29.386569+00:00",
+ "runs": {
+  "highres_seed42": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/shufflenet_v2_highres_ce_full/best.pt",
+   "checkpoint_sha256": "cafebb6a76ef566ea05fa47e7745677c35cb3abbec87b1de468c0898b02c67bc",
+   "logits_sha256": "6fdad4db9d2ce46ae3a28042ac6af7f3275c1b5accc313ec40855185fb201432",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "highres_seed123": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/shufflenet_v2_highres_ce_full_seed123/best.pt",
+   "checkpoint_sha256": "189785ae00a95ee3c342b5f29e5b8306bf864256016259b19e80be333226929f",
+   "logits_sha256": "3527959e0e11205f1522ee86bdb84397a950aecf50c276cec0a639accc5320a1",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "highres_seed2026": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/shufflenet_v2_highres_ce_full_seed2026/best.pt",
+   "checkpoint_sha256": "15791aaddb863abc45f1de55c0c1e8781420238ae7b97c0b6a84740d155c0c7b",
+   "logits_sha256": "7a609a1594faecef2425b91eb18749143e0840cd88169e0057bb4c14d4ee96b8",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "standard_seed42": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/shufflenet_v2_standard_ce_full/best.pt",
+   "checkpoint_sha256": "e62f47503c201e937117dc4813900364d17ce216255ca5a949f8522310eeed1d",
+   "logits_sha256": "e1a1dbb3caa3b8b358742f95f00918c4b58c984799f40ef74fe5fc1200cd3e7e",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "standard_seed123": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/shufflenet_v2_standard_ce_full_seed123/best.pt",
+   "checkpoint_sha256": "30d3452eddfb93f4cdecacf584ee965fcdd1cffaa72d299da07ce05b8e8de5a2",
+   "logits_sha256": "f7a7099115623d631b41b6b05d31e7e4ee78247d1f66d901042a94aa7ce23fe1",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "standard_seed2026": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/shufflenet_v2_standard_ce_full_seed2026/best.pt",
+   "checkpoint_sha256": "1db481787cbdae214ef07072bbc21527494edb48fa5c3d7bdc20ea7468e1d19a",
+   "logits_sha256": "d1c458fa0342253cc136ee73f2316cfe5b6268683e997c783655197a5bcda39d",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "resnet18_seed42": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/resnet18_baseline_full/best.pt",
+   "checkpoint_sha256": "9cb3f6317272b65a0ef21d66505230a567ef7e7074d820477f63df5c70982b83",
+   "logits_sha256": "3587dc15a86743e52cc0fb5150600bd3c158c3fa767663a65e83d6d7596689b0",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "resnet18_seed123": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/resnet18_baseline_full_seed123/best.pt",
+   "checkpoint_sha256": "c9dbbd68a5d4d66acbc8a649018ffaec08e6cc9e0d573ffcbec6089637c85cf5",
+   "logits_sha256": "253bc9676fa4e574f7c6aa2d8fb9b02702c55160d967f6cb04f57260afcd5bad",
+   "shape": [
+    38015,
+    9
+   ]
+  },
+  "resnet18_seed2026": {
+   "checkpoint": "/Users/mima0000/论文111/04_实验/checkpoints/resnet18_baseline_full_seed2026/best.pt",
+   "checkpoint_sha256": "39d822a4b1688e00f72bb8156d90bb6b60ee539f8e63ef4f2af197ea735439bf",
+   "logits_sha256": "5e79f9a5117f4cf1b4f861e4b2cfb5bc7a9c67f1c4c3e81bb7c23bc1b0cd6144",
+   "shape": [
+    38015,
+    9
+   ]
+  }
+ }
+}

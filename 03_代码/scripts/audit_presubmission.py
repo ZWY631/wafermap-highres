@@ -24,13 +24,13 @@ from datetime import datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-MD = PROJECT_ROOT / "06_论文/manuscript/08_英文论文投稿定稿版_v6.md"
-DOCX = PROJECT_ROOT / "06_论文/manuscript/08_英文论文投稿定稿版_v6.docx"
+MD = PROJECT_ROOT / "06_论文/manuscript/09_英文论文投稿定稿版_v7.md"
+DOCX = PROJECT_ROOT / "06_论文/manuscript/09_英文论文投稿定稿版_v7.docx"
 CANON_MANIFEST = (
     PROJECT_ROOT
     / "04_实验/metrics/20260817_kang_vs_highres_significance_canonical/analysis_manifest.json"
 )
-REPORT = PROJECT_ROOT / "00_项目管理/20260821_投稿前总审计报告.md"
+REPORT = PROJECT_ROOT / "00_项目管理/20260914_v7投稿前总审计报告.md"
 
 FINAL_TABLE = PROJECT_ROOT / "05_结果/tables/table_final_highres_ce_multiseed_test.csv"
 KANG_TABLE = (
@@ -44,8 +44,9 @@ WORKING_SEED42 = (
 
 ALLOWED_PLACEHOLDERS = [
     "[Author name(s) to be added]",
-    "[Affiliation to be added]",
-    "[Name and e-mail to be added]",
+    "[Institution, department, city, postcode, country to be added]",
+    "[Name and active e-mail address to be added]",
+    "[16-digit ORCID of the corresponding author to be added]",
     "[To be completed after the author list and contribution roles are confirmed.]",
     "[Date of submission]",
     "[Corresponding author name]",
@@ -53,6 +54,21 @@ ALLOWED_PLACEHOLDERS = [
     "[Author A]",
     "[Author B]",
 ]
+
+# Values that the v7 rewrite replaced. Each was a transcription error against
+# the frozen artifacts, so none of them may reappear in the manuscript.
+FORBIDDEN_TOKENS = {
+    "± 0.0100": "Table 2C S2P accuracy SD (frozen value 0.0425)",
+    "± 0.0222": "Table 2C S2N accuracy SD (frozen value 0.0289)",
+    "± 0.0632": "Table 2C S1P accuracy SD (frozen value 0.0770)",
+    "± 0.0494": "Table 2C S1B accuracy SD (frozen value 0.0526)",
+    "−6.56": "factorial interaction on the test split (frozen value −6.57)",
+    "+1.54 test points": "blur-factor effect on test (frozen value +1.65)",
+    "Manuscript status": "internal build metadata",
+    "Target journal": "internal build metadata",
+    "Author Checklist": "internal working checklist",
+    "Generated from submission-ready manuscript source": "internal build note",
+}
 
 
 def sha256_file(path: Path) -> str:
@@ -152,19 +168,35 @@ def main() -> None:
     findings.append(f"Word 内嵌图：检出 {embedded} 个图片对象（应为 7）。")
 
     # ---- 3. tables ----
-    expected_tables = [
-        "1", "2", "2A", "2B", "2C", "3", "4", "5", "6", "7",
-        "8", "8A", "8B", "8C", "9", "9A", "10", "11",
-    ]
+    expected_tables = [str(n) for n in range(1, 22)]
     captions = re.findall(r"\*\*Table ([\dA-Z]+)\.", md_text)
     missing_tables = [t for t in expected_tables if t not in captions]
     if not missing_tables:
         findings.append(
             f"表标题：{len(expected_tables)} 个 Table 标题齐全且位于表格上方"
-            f"（1–11、2A、2B、2C、8A、8B、8C、9A）。"
+            f"（按正文出现顺序连续编号 1–21，无字母后缀）。"
         )
     else:
         failures.append(f"缺失表标题：{missing_tables}")
+
+    # v7 added two tables and removed the letter-suffix scheme, so the count of
+    # embedded Word tables must equal the number of captions.
+    markdown_blocks = 0
+    previous = False
+    for raw_line in md_text.split("\n"):
+        current = raw_line.strip().startswith("|")
+        if current and not previous:
+            markdown_blocks += 1
+        previous = current
+    if markdown_blocks != len(expected_tables):
+        failures.append(
+            f"表格块与标题数量不符：Markdown 表格块 {markdown_blocks} 个，"
+            f"Table 标题 {len(expected_tables)} 个（存在无标题表格或漏引用）。"
+        )
+    else:
+        findings.append(
+            f"表格块一致性：Markdown 表格块 {markdown_blocks} 个，与标题数一致，无无标题表格。"
+        )
 
     # ---- 4. canonical prediction hashes ----
     canon = json.loads(CANON_MANIFEST.read_text(encoding="utf-8"))
@@ -202,6 +234,20 @@ def main() -> None:
         "0.1914": "Kang accuracy advantage",
         "91.44": "parameter reduction vs stacking",
         "85.72": "FLOP reduction vs stacking",
+        # v7 cost-transparency and concentration numbers; sources are
+        # 05_结果/tables/table_v7_*.csv.
+        "15.75": "FLOP factor across the six stem configurations",
+        "1.1525": "S1B minus S1N Macro-F1 gap",
+        "90.89": "S1B Conv/Linear FLOPs (million)",
+        "64.9": "Scratch share of the aggregate Macro-F1 gain",
+        "6.2973": "Scratch contribution to Macro-F1",
+        "3.8369": "mean gain of the other eight classes",
+        "8.4308": "ResNet18 gain over the matched standard stem",
+        "1.2774": "HighRes minus ResNet18 Macro-F1",
+        "8.85": "ResNet18 parameter factor over the standard stem",
+        "12.52": "ResNet18 FLOP factor over the standard stem",
+        "93.68": "INT8 cold-start regression",
+        "72.4452": "ResNet18 Scratch F1",
     }
     for token, label in spot.items():
         count = md_text.count(token)
@@ -211,6 +257,15 @@ def main() -> None:
             findings.append(f"关键数字 {token}（{label}）：正文出现 1 次。")
         else:
             failures.append(f"关键数字缺失：{token}（{label}）")
+
+    # Values replaced by v7 must not reappear (regression guard).
+    for token, label in FORBIDDEN_TOKENS.items():
+        if token in md_text:
+            failures.append(f"已废弃的数值/措辞重新出现：{token}（{label}）")
+    if not any(token in md_text for token in FORBIDDEN_TOKENS):
+        findings.append(
+            f"回归防护：{len(FORBIDDEN_TOKENS)} 个已废弃数值/措辞均未出现。"
+        )
 
     # Anti-aliasing control numbers (Sections 3.4.1 / 4.1.1.1, Tables 2C and
     # 8C). These are cross-checked against the frozen evaluation bundle rather
@@ -308,9 +363,9 @@ def main() -> None:
         failures.append(f"投稿包缺失：{missing_pkg}")
 
     lines = [
-        "# 20260821 投稿前总审计报告",
+        "# 20260914 v7 投稿前总审计报告",
         "",
-        f"- 审计对象：`08_英文论文投稿定稿版_v6.md` / `.docx`（30 条文献、17 表、7 图）",
+        f"- 审计对象：`09_英文论文投稿定稿版_v7.md` / `.docx`（43 条文献、21 表、7 图）",
         f"- 审计时间：{datetime.now().astimezone().isoformat(timespec='seconds')}",
         f"- 审计脚本：`03_代码/scripts/audit_presubmission.py`",
         "",
@@ -335,7 +390,7 @@ def main() -> None:
         "",
         "- 填写作者、单位、通讯作者、ORCID（稿件头部 + docx 属性 + Cover Letter）。",
         "- 确认 CRediT 角色并在 Declarations 填写 Author contributions。",
-        "- 建立匿名仓库并更新数据/代码可用性声明中的链接。",
+        "- 把 v7 新增代码、表与两份新 metrics 目录 push 到 https://github.com/ZWY631/wafermap-highres，使仓库与稿件的代码可用性声明一致。",
         "- 按 JIM 官方投稿指南复核图表分辨率与参考文献格式（Springer 基础格式）。",
         "- 全体作者审阅并同意投稿；确认利益冲突声明。",
         "",

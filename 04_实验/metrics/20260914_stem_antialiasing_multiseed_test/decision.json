@@ -1,0 +1,17 @@
+{
+  "primary_metric": "test-set Scratch per-class F1 (3-seed mean)",
+  "S2B_scratch_f1_mean": 0.35381416896321133,
+  "S2P_scratch_f1_mean": 0.25018004489504814,
+  "S1N_scratch_f1_mean": 0.816964896340512,
+  "S1N_scratch_f1_seed_max": 0.8252148997134671,
+  "recovery_ratio_R": 0.18284561382306966,
+  "recovery_ratio_R_per_seed": {
+    "42": 0.21712900681953237,
+    "123": 0.10546076800860194,
+    "2026": 0.225910141059308
+  },
+  "decision_band": "resolution_dominated",
+  "decision_text": "分辨率主导：保留现有 early-resolution 结论",
+  "hard_triggers_fired": [],
+  "paper_must_be_rewritten": false
+}

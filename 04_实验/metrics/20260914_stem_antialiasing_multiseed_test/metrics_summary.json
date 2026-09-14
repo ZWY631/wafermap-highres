@@ -1,0 +1,367 @@
+{
+  "evaluation_id": "20260914_stem_antialiasing_multiseed_test",
+  "completed_at": "2026-09-14T07:51:06+08:00",
+  "device": "mps",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python_version": "3.11.15",
+  "torch_version": "2.13.0",
+  "torchvision_version": "0.28.0",
+  "sklearn_version": "1.9.0",
+  "numpy_version": "2.4.6",
+  "pandas_version": "3.0.5",
+  "batch_size": 256,
+  "num_workers": 0,
+  "test_samples_per_seed": 25943,
+  "parameter_count": 1262397,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "preregistration_document": "00_项目管理/20260913_混叠消融预注册判定规则.md",
+  "checkpoint_selection_rule": "best validation Macro-F1 within 30 epochs",
+  "test_split_was_untouched_during_entire_project": false,
+  "test_split_prior_access": "Historical access by two baseline models and the frozen HighRes final test; recorded rather than denied.",
+  "post_test_tuning_allowed": false,
+  "checkpoints": [
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_standard_ce_full/best.pt",
+      "checkpoint_sha256": "e62f47503c201e937117dc4813900364d17ce216255ca5a949f8522310eeed1d",
+      "epoch": 29,
+      "val_macro_f1": 0.8125632141235073,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_standard_ce_full_history.csv",
+      "history_sha256": "b6f2ae9edbd7917ad97e6cb1780bb26c9038bb36f089fb95c5b6a66d08bf5a3b",
+      "configuration_id": "S2P",
+      "display_name": "stride 2 + max pool",
+      "conv1_stride": 2,
+      "downsampling": "maxpool",
+      "stem_grid": "16x16",
+      "seed": 42
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_standard_ce_full_seed123/best.pt",
+      "checkpoint_sha256": "30d3452eddfb93f4cdecacf584ee965fcdd1cffaa72d299da07ce05b8e8de5a2",
+      "epoch": 29,
+      "val_macro_f1": 0.8224228669020582,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_standard_ce_full_seed123_history.csv",
+      "history_sha256": "b6919c72898117b96706827e3c0bb77ee4e55f176d726d738609e018ea77fbb3",
+      "configuration_id": "S2P",
+      "display_name": "stride 2 + max pool",
+      "conv1_stride": 2,
+      "downsampling": "maxpool",
+      "stem_grid": "16x16",
+      "seed": 123
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_standard_ce_full_seed2026/best.pt",
+      "checkpoint_sha256": "1db481787cbdae214ef07072bbc21527494edb48fa5c3d7bdc20ea7468e1d19a",
+      "epoch": 25,
+      "val_macro_f1": 0.8182764956120094,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_standard_ce_full_seed2026_history.csv",
+      "history_sha256": "d9d8663b1343a62e32eae61472fd29f7bfc01ca3682d4c1e67556a8b6c37bded",
+      "configuration_id": "S2P",
+      "display_name": "stride 2 + max pool",
+      "conv1_stride": 2,
+      "downsampling": "maxpool",
+      "stem_grid": "16x16",
+      "seed": 2026
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s2_blurpool_ce_full/best.pt",
+      "checkpoint_sha256": "ef930f5c7cfe510e34a3e24b64fd787e209072b54c0130294da8edc627365eb5",
+      "epoch": 28,
+      "val_macro_f1": 0.8523841798236256,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s2_blurpool_ce_full_history.csv",
+      "history_sha256": "28fc35b2b97e657ad69e9b7ba40a20f571b5eca0c884e3648faaa3a7e18b3f7b",
+      "configuration_id": "S2B",
+      "display_name": "stride 2 + blur pool",
+      "conv1_stride": 2,
+      "downsampling": "blurpool",
+      "stem_grid": "16x16",
+      "seed": 42
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s2_blurpool_ce_full_seed123/best.pt",
+      "checkpoint_sha256": "2afd2f09f762b81d9c6263faddc76b3b9fcb655be6d1801e8263f38cd10d5d99",
+      "epoch": 30,
+      "val_macro_f1": 0.8462291430891956,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s2_blurpool_ce_full_seed123_history.csv",
+      "history_sha256": "597ba7c6a257d35d6170c340fc70fc38de42a0b168f5e8abe3cee071b9a9f035",
+      "configuration_id": "S2B",
+      "display_name": "stride 2 + blur pool",
+      "conv1_stride": 2,
+      "downsampling": "blurpool",
+      "stem_grid": "16x16",
+      "seed": 123
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s2_blurpool_ce_full_seed2026/best.pt",
+      "checkpoint_sha256": "e9ba3cd3493d78003576112d3d43fa52ca550dfb1dcfe47a6c7bd3b3f2e2700f",
+      "epoch": 27,
+      "val_macro_f1": 0.8464752033080605,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s2_blurpool_ce_full_seed2026_history.csv",
+      "history_sha256": "46a08ca9b8349deabde801d25975f4a0345e2783f2ae95201b26b72a13b5cc55",
+      "configuration_id": "S2B",
+      "display_name": "stride 2 + blur pool",
+      "conv1_stride": 2,
+      "downsampling": "blurpool",
+      "stem_grid": "16x16",
+      "seed": 2026
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s2_nopool_ce_full/best.pt",
+      "checkpoint_sha256": "01eaf4c7088857a9fe3584e9efed7e58c8e5418762e95cafd98f66346515e24f",
+      "epoch": 28,
+      "val_macro_f1": 0.9011540480355994,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s2_nopool_ce_full_history.csv",
+      "history_sha256": "94e4ef7d27984cf579248b45675e59af523d5af05e737a0094afff25849ca58d",
+      "configuration_id": "S2N",
+      "display_name": "stride 2 + no pool",
+      "conv1_stride": 2,
+      "downsampling": "identity",
+      "stem_grid": "32x32",
+      "seed": 42
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s2_nopool_ce_full_seed123/best.pt",
+      "checkpoint_sha256": "55e4ef31e122a5126b960bfc0305d2f47acef84c98dca45d40bde142d7163068",
+      "epoch": 25,
+      "val_macro_f1": 0.8891500828164263,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s2_nopool_ce_full_seed123_history.csv",
+      "history_sha256": "efae49d4d90f44e3bc3d1d3d5565c8be917bdbab5daecb610fb0201a5d959cf6",
+      "configuration_id": "S2N",
+      "display_name": "stride 2 + no pool",
+      "conv1_stride": 2,
+      "downsampling": "identity",
+      "stem_grid": "32x32",
+      "seed": 123
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s2_nopool_ce_full_seed2026/best.pt",
+      "checkpoint_sha256": "43ab8bdb708c6ccb4a409ee80690cc8a2dd531b9d96ed48e748c4b38111edba1",
+      "epoch": 29,
+      "val_macro_f1": 0.8907035746158033,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s2_nopool_ce_full_seed2026_history.csv",
+      "history_sha256": "5acb2d384c9b9f3262708f6a19c6a4132c36e240173ecdc3ba54bc7f541f728f",
+      "configuration_id": "S2N",
+      "display_name": "stride 2 + no pool",
+      "conv1_stride": 2,
+      "downsampling": "identity",
+      "stem_grid": "32x32",
+      "seed": 2026
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s1_pool_ce_full/best.pt",
+      "checkpoint_sha256": "94371cebec0bc437e6bdcdb7ee79b2298d5c205d7d76f16c189717796cdc8a6d",
+      "epoch": 27,
+      "val_macro_f1": 0.899874284625074,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s1_pool_ce_full_history.csv",
+      "history_sha256": "f9c60e8410d5738a247138e380ce4942fa242aa56d4447c62d4e201614d739f1",
+      "configuration_id": "S1P",
+      "display_name": "stride 1 + max pool",
+      "conv1_stride": 1,
+      "downsampling": "maxpool",
+      "stem_grid": "32x32",
+      "seed": 42
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s1_pool_ce_full_seed123/best.pt",
+      "checkpoint_sha256": "aad9d23db7cecd4498cdd439471c08596b1ac85fe2b2f13ed83d5b01b2516fc5",
+      "epoch": 24,
+      "val_macro_f1": 0.893428599004522,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s1_pool_ce_full_seed123_history.csv",
+      "history_sha256": "8751067f6eeeb0aa34cfd6c42ffa4ec6d01c2e7e4965327894f4e2116c2508dc",
+      "configuration_id": "S1P",
+      "display_name": "stride 1 + max pool",
+      "conv1_stride": 1,
+      "downsampling": "maxpool",
+      "stem_grid": "32x32",
+      "seed": 123
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s1_pool_ce_full_seed2026/best.pt",
+      "checkpoint_sha256": "3dd951ba2c601127ea3b958c6011fa6a3e8339cd2cd64d7b8c7e3d28b9341abc",
+      "epoch": 23,
+      "val_macro_f1": 0.8936646794573271,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s1_pool_ce_full_seed2026_history.csv",
+      "history_sha256": "ba8b7215ee6e2d7183bb8feb789d993e0ed44570f42d11b45b5de303f6565ea2",
+      "configuration_id": "S1P",
+      "display_name": "stride 1 + max pool",
+      "conv1_stride": 1,
+      "downsampling": "maxpool",
+      "stem_grid": "32x32",
+      "seed": 2026
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s1_blurpool_ce_full/best.pt",
+      "checkpoint_sha256": "a22ce29609442f382d7df8a897062a2d2f93bc1cd28a240872515f721603e8c8",
+      "epoch": 28,
+      "val_macro_f1": 0.8981940548837524,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s1_blurpool_ce_full_history.csv",
+      "history_sha256": "b71784fe170e8ead5822b387c3706e530cbb093ef6c11d8dca3aa7541dd216ad",
+      "configuration_id": "S1B",
+      "display_name": "stride 1 + blur pool",
+      "conv1_stride": 1,
+      "downsampling": "blurpool",
+      "stem_grid": "32x32",
+      "seed": 42
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s1_blurpool_ce_full_seed123/best.pt",
+      "checkpoint_sha256": "8ee40d4a1e0137ae0e2087dd0ed31fe86c21b37873eade59a0ee3c8d636ee2b3",
+      "epoch": 30,
+      "val_macro_f1": 0.899672643332157,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s1_blurpool_ce_full_seed123_history.csv",
+      "history_sha256": "90e0dbcf892ad759661daf31ddfdce3f1322c1fd236f9f8cb4b8dca2b09cd8aa",
+      "configuration_id": "S1B",
+      "display_name": "stride 1 + blur pool",
+      "conv1_stride": 1,
+      "downsampling": "blurpool",
+      "stem_grid": "32x32",
+      "seed": 123
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_stem_s1_blurpool_ce_full_seed2026/best.pt",
+      "checkpoint_sha256": "d94265f652294f8646c2260042fca7f7c58ce3b56907a5c6c64932e4082db781",
+      "epoch": 28,
+      "val_macro_f1": 0.9006202167511651,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_stem_s1_blurpool_ce_full_seed2026_history.csv",
+      "history_sha256": "58682884c5902c624be9027205745bde28bf6f242b31b0a3f4c05f504eaaaf72",
+      "configuration_id": "S1B",
+      "display_name": "stride 1 + blur pool",
+      "conv1_stride": 1,
+      "downsampling": "blurpool",
+      "stem_grid": "32x32",
+      "seed": 2026
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_highres_ce_full/best.pt",
+      "checkpoint_sha256": "cafebb6a76ef566ea05fa47e7745677c35cb3abbec87b1de468c0898b02c67bc",
+      "epoch": 28,
+      "val_macro_f1": 0.9053773248524237,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_highres_ce_full_history.csv",
+      "history_sha256": "bca243d438d883a4302b36ae64ea637a2a0c54e29b0b5053daf018ab58002143",
+      "configuration_id": "S1N",
+      "display_name": "stride 1 + no pool",
+      "conv1_stride": 1,
+      "downsampling": "identity",
+      "stem_grid": "64x64",
+      "seed": 42
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_highres_ce_full_seed123/best.pt",
+      "checkpoint_sha256": "189785ae00a95ee3c342b5f29e5b8306bf864256016259b19e80be333226929f",
+      "epoch": 27,
+      "val_macro_f1": 0.9072335751434787,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_highres_ce_full_seed123_history.csv",
+      "history_sha256": "731ab1dea144e6175665755d593945aacf24c0703c311414d4e4c5a406bdfc13",
+      "configuration_id": "S1N",
+      "display_name": "stride 1 + no pool",
+      "conv1_stride": 1,
+      "downsampling": "identity",
+      "stem_grid": "64x64",
+      "seed": 123
+    },
+    {
+      "checkpoint_path": "04_实验/checkpoints/shufflenet_v2_highres_ce_full_seed2026/best.pt",
+      "checkpoint_sha256": "15791aaddb863abc45f1de55c0c1e8781420238ae7b97c0b6a84740d155c0c7b",
+      "epoch": 26,
+      "val_macro_f1": 0.9020327874707613,
+      "parameter_count": 1262397,
+      "history_path": "04_实验/metrics/shufflenet_v2_highres_ce_full_seed2026_history.csv",
+      "history_sha256": "f9d7bec573df034438cac3a59713c972d3016eb9bd7c999fadd68eca170332e8",
+      "configuration_id": "S1N",
+      "display_name": "stride 1 + no pool",
+      "conv1_stride": 1,
+      "downsampling": "identity",
+      "stem_grid": "64x64",
+      "seed": 2026
+    }
+  ],
+  "decision": {
+    "primary_metric": "test-set Scratch per-class F1 (3-seed mean)",
+    "S2B_scratch_f1_mean": 0.35381416896321133,
+    "S2P_scratch_f1_mean": 0.25018004489504814,
+    "S1N_scratch_f1_mean": 0.816964896340512,
+    "S1N_scratch_f1_seed_max": 0.8252148997134671,
+    "recovery_ratio_R": 0.18284561382306966,
+    "recovery_ratio_R_per_seed": {
+      "42": 0.21712900681953237,
+      "123": 0.10546076800860194,
+      "2026": 0.225910141059308
+    },
+    "decision_band": "resolution_dominated",
+    "decision_text": "分辨率主导：保留现有 early-resolution 结论",
+    "hard_triggers_fired": [],
+    "paper_must_be_rewritten": false
+  },
+  "macro_f1_by_configuration": {
+    "S2P": {
+      "mean": 0.804946606211959,
+      "sample_std": 0.0013158932202822196
+    },
+    "S2B": {
+      "mean": 0.8343442166795253,
+      "sample_std": 0.00634254116860806
+    },
+    "S2N": {
+      "mean": 0.8856548707236191,
+      "sample_std": 0.004573911445713979
+    },
+    "S1P": {
+      "mean": 0.8869972384967547,
+      "sample_std": 0.002873258251198555
+    },
+    "S1B": {
+      "mean": 0.8905040701862291,
+      "sample_std": 0.004551770683901311
+    },
+    "S1N": {
+      "mean": 0.9020287207888357,
+      "sample_std": 0.001965103989333601
+    }
+  },
+  "scratch_f1_by_configuration": {
+    "S2P": {
+      "mean": 0.25018004489504814,
+      "sample_std": 0.021010515801481434
+    },
+    "S2B": {
+      "mean": 0.35381416896321133,
+      "sample_std": 0.04642928043930089
+    },
+    "S2N": {
+      "mean": 0.733326026062599,
+      "sample_std": 0.013533997189685943
+    },
+    "S1P": {
+      "mean": 0.743455626679311,
+      "sample_std": 0.02859191924797101
+    },
+    "S1B": {
+      "mean": 0.761595174928121,
+      "sample_std": 0.01339825667705786
+    },
+    "S1N": {
+      "mean": 0.816964896340512,
+      "sample_std": 0.0074725276002785375
+    }
+  }
+}
