@@ -108,6 +108,9 @@ import sys
 import pandas as pd
 path, stem, seed = sys.argv[1], sys.argv[2], sys.argv[3]
 frame = pd.read_csv(path)
+if len(frame) == 0:
+    print(f"  ⏳ {stem:9s} seed{seed:5s} 已启动，首轮尚未完成")
+    raise SystemExit
 col = [c for c in frame.columns if "val" in c.lower() and "macro" in c.lower()][0]
 best = float(frame[col].max())
 secs = frame["epoch_seconds"].iloc[-1] if "epoch_seconds" in frame else float("nan")
