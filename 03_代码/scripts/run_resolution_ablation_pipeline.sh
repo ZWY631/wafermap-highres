@@ -27,16 +27,31 @@ echo "pipeline start $(date '+%Y-%m-%d %H:%M:%S')"
 abort() { echo "ABORT: $*"; echo "pipeline end $(date '+%Y-%m-%d %H:%M:%S')"; exit 1; }
 
 # ---- stage 1: archive -------------------------------------------------------
-echo "[1/5] waiting for $ZIP"
-for _ in $(seq 1 240); do
-  [ -f "$ZIP" ] && break
-  sleep 120
+# The parallel downloader assembles the archive by creating an empty file and
+# then appending each segment, so the file can exist for a few seconds before
+# it is complete. Wait for the exact byte count instead of merely for
+# existence, otherwise a mid-assembly sighting would abort the pipeline.
+ARCHIVE_BYTES=344542743
+echo "[1/5] waiting for $ZIP ($ARCHIVE_BYTES bytes)"
+for _ in $(seq 1 480); do
+  if [ -f "$ZIP" ]; then
+    size=$(stat -f%z "$ZIP" 2>/dev/null || echo 0)
+    [ "$size" -eq "$ARCHIVE_BYTES" ] && break
+  fi
+  sleep 60
 done
-[ -f "$ZIP" ] || abort "archive never appeared"
-size=$(stat -f%z "$ZIP")
-echo "archive size=$size"
-unzip -t "$ZIP" > /dev/null || abort "archive failed its integrity test"
-echo "archive integrity OK"
+size=$(stat -f%z "$ZIP" 2>/dev/null || echo 0)
+[ "$size" -eq "$ARCHIVE_BYTES" ] || abort "archive incomplete: $size != $ARCHIVE_BYTES"
+echo "archive size=$size (complete)"
+for attempt in 1 2 3; do
+  if unzip -t "$ZIP" > /dev/null 2>&1; then
+    echo "archive integrity OK"
+    break
+  fi
+  echo "integrity test attempt $attempt failed; retrying"
+  sleep 60
+done
+unzip -t "$ZIP" > /dev/null 2>&1 || abort "archive failed its integrity test"
 cd "$RAW" || abort "cannot enter $RAW"
 unzip -oq "$ZIP" || abort "extraction failed"
 PICKLE=$(find "$RAW" -name "*.pkl" -type f | head -1)
@@ -55,14 +70,32 @@ export WM811K_RAW_DIR="$RAW"
 echo "preprocessing OK"
 
 # ---- stage 3: control gate --------------------------------------------------
-echo "[3/5] waiting for the 64 x 64 control runs"
-for _ in $(seq 1 120); do
-  if [ -f "$ROOT/04_实验/metrics/shufflenet_v2_standard_res64_ce_full_history.csv" ] \
-     && [ -f "$ROOT/04_实验/metrics/shufflenet_v2_highres_res64_ce_full_history.csv" ]; then
-    break
-  fi
+# The history file exists from the very first epoch, so waiting for existence is
+# not enough: an incomplete history would be judged against the frozen value and
+# would abort the run. Wait until both control runs have logged all 30 epochs
+# and have stopped growing.
+cd "$ROOT" || abort "cannot return to $ROOT"
+echo "[3/5] waiting for the 64 x 64 control runs to complete 30 epochs each"
+for _ in $(seq 1 300); do
+  ready=$("$PY" - <<'PYEOF'
+import pandas as pd
+
+RUNS = ("shufflenet_v2_standard_res64_ce_full", "shufflenet_v2_highres_res64_ce_full")
+complete = 0
+for run in RUNS:
+    try:
+        frame = pd.read_csv(f"04_实验/metrics/{run}_history.csv")
+    except Exception:
+        continue
+    if len(frame) >= 30:
+        complete += 1
+print(complete)
+PYEOF
+)
+  [ "$ready" = "2" ] && break
   sleep 60
 done
+echo "control histories complete: $ready/2"
 "$PY" - <<'PYEOF' || abort "control gate failed"
 import sys
 import pandas as pd
@@ -79,6 +112,10 @@ for run, (tag, expected) in GATES.items():
         frame = pd.read_csv(path)
     except FileNotFoundError:
         print(f"FAIL {tag}: missing {path}")
+        ok = False
+        continue
+    if len(frame) < 30:
+        print(f"FAIL {tag}: only {len(frame)} epochs logged")
         ok = False
         continue
     column = [c for c in frame.columns if "val" in c.lower() and "macro" in c.lower()][0]
