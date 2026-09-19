@@ -33,7 +33,10 @@ abort() { echo "ABORT: $*"; echo "pipeline end $(date '+%Y-%m-%d %H:%M:%S')"; ex
 # existence, otherwise a mid-assembly sighting would abort the pipeline.
 ARCHIVE_BYTES=344542743
 echo "[1/5] waiting for $ZIP ($ARCHIVE_BYTES bytes)"
-for _ in $(seq 1 480); do
+# The mirror is slow and intermittently stops answering after aggressive
+# downloading, so allow up to 48 hours rather than aborting while the download
+# is still making progress.
+for _ in $(seq 1 2880); do
   if [ -f "$ZIP" ]; then
     size=$(stat -f%z "$ZIP" 2>/dev/null || echo 0)
     [ "$size" -eq "$ARCHIVE_BYTES" ] && break
