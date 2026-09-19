@@ -33,12 +33,92 @@ CONTRASTS = (
     ("R128-S1N", "R128-S2P", "the stem effect at 128 px"),
 )
 
+# Table 22 order and labels. The three 32 x 32 configurations of the stem
+# ablation are the reference band for the "internal grid, not input pixels"
+# branch of the argument.
+TABLE_ORDER = (
+    ("F64-S2P", "Standard stem, 64 × 64 (frozen)"),
+    ("R128-S2P", "Standard stem, 128 × 128"),
+    ("F64-S1N", "HighRes stem, 64 × 64 (frozen)"),
+    ("R128-S1N", "HighRes stem, 128 × 128"),
+    ("R64-S2P", "Standard stem, 64 × 64 (re-run through the same pipeline)"),
+    ("R64-S1N", "HighRes stem, 64 × 64 (re-run through the same pipeline)"),
+)
+
+# The 32 x 32 configurations of the stem ablation form the reference band for
+# the "internal grid, not input pixels" branch of the argument. They are read
+# from the frozen table rather than hardcoded.
+STEM_TABLE = TABLES / "table_stem_five_config_multiseed_test.csv"
+BAND_IDS = ("S2N", "S1P", "S1B")
+FROZEN_HIGHRES_64 = 90.2029
+FROZEN_STANDARD_64 = 80.4947
+
+
+def band_32() -> dict[str, float]:
+    frame = pd.read_csv(STEM_TABLE).set_index("configuration_id")
+    return {key: float(frame.loc[key, "macro_f1_mean"]) * 100.0 for key in BAND_IDS}
+
+
+def verdict(merged: pd.DataFrame) -> list[str]:
+    """Report which branch of the argument the measured cells support."""
+    rows = merged.set_index("cell_id")
+    if "R128-S2P" not in rows.index or "F64-S1N" not in rows.index:
+        return ["Not decidable yet: the 128 px standard cell has not been evaluated."]
+    s128 = float(rows.loc["R128-S2P", "macro_f1_mean_percent"])
+    gap_to_highres = FROZEN_HIGHRES_64 - s128
+    band = band_32()
+    band_lo, band_hi = min(band.values()), max(band.values())
+    same_direction = band_lo - 0.75 <= s128 <= band_hi + 0.75
+
+    lines = [
+        f"standard@128 Macro-F1 = {s128:.4f}",
+        f"  vs frozen HighRes@64 ({FROZEN_HIGHRES_64:.4f}): {s128 - FROZEN_HIGHRES_64:+.4f} pp",
+        f"  vs frozen standard@64 ({FROZEN_STANDARD_64:.4f}): "
+        f"{s128 - FROZEN_STANDARD_64:+.4f} pp",
+        "  frozen 32 x 32 band "
+        + ", ".join(f"{key} {value:.4f}" for key, value in band.items()),
+    ]
+    if same_direction and gap_to_highres > 0.5:
+        lines.append(
+            "BRANCH A - internal grid dominates. Feeding the standard stem a finer "
+            "input buys little: it lands in the 32 x 32 band and stays well below "
+            "HighRes@64 despite costing only 1/3.94 of its compute. Keep the "
+            "early-resolution claim and report the cost saving."
+        )
+    elif abs(gap_to_highres) <= 0.5:
+        lines.append(
+            "BRANCH B - input sampling dominates. The standard stem catches up with "
+            "HighRes@64 once the input is fine enough, so the section must be "
+            "rewritten around the input grid rather than the stem operator."
+        )
+    else:
+        lines.append(
+            "BRANCH C - intermediate. Interpret against the per-seed deltas below "
+            "and against the 32 x 32 band before writing the section."
+        )
+    if "R128-S1N" in rows.index:
+        h128 = float(rows.loc["R128-S1N", "macro_f1_mean_percent"])
+        lines.append(
+            f"HighRes@128 = {h128:.4f} ({h128 - FROZEN_HIGHRES_64:+.4f} pp vs "
+            f"HighRes@64), i.e. the ceiling check."
+        )
+    return lines
+
 
 def main() -> int:
-    if not RESULTS.is_file():
-        raise SystemExit(f"missing {RESULTS}; run the evaluator first")
-    results = pd.read_csv(RESULTS)
-    cost = pd.read_csv(COST)
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--results", type=Path, default=RESULTS)
+    parser.add_argument("--cost", type=Path, default=COST)
+    parser.add_argument("--per-seed", type=Path, default=PER_SEED)
+    args = parser.parse_args()
+
+    results_path: Path = args.results
+    if not results_path.is_file():
+        raise SystemExit(f"missing {results_path}; run the evaluator first")
+    results = pd.read_csv(results_path)
+    cost = pd.read_csv(args.cost)
     results["stem"] = results["display_name"].str.contains("identity").map(
         {True: "highres", False: "standard"}
     )
@@ -49,29 +129,37 @@ def main() -> int:
     )
 
     print("=" * 92)
-    print("Table 22 rows (mean ± sample SD over the available seeds)")
+    print("Table 22 (paste into the manuscript; cells in paper order)")
     print("=" * 92)
-    header = (
-        "| Cell | Input | Grid before stage 2 | FLOPs (M) | Accuracy (%) | "
-        "Macro-F1 (%) | Scratch F1 (%) |"
+    print(
+        "| Configuration | Input | Grid before stage 2 | FLOPs (M) | Accuracy (%) "
+        "| Macro-F1 (%) | Scratch F1 (%) |"
     )
-    print(header)
     print("|---|---:|---|---:|---:|---:|---:|")
-    order = ["F64-S2P", "R64-S2P", "R128-S2P", "F64-S1N", "R64-S1N", "R128-S1N"]
-    for cell_id in order:
+    for cell_id, label in TABLE_ORDER:
         row = merged[merged["cell_id"] == cell_id]
         if row.empty:
-            print(f"| {cell_id} | — | — | — | not evaluated | — | — |")
+            print(f"| {label} | — | — | — | not evaluated | — | — |")
             continue
         row = row.iloc[0]
-        name = row["display_name"].replace(" x ", " × ")
+        bold = "**" if cell_id == "R128-S2P" else ""
         print(
-            f"| {name} | {row['image_size']} | {row['grid_before_stage2']} | "
-            f"{row['flops_million']:.2f} | "
-            f"{row['accuracy_mean_percent']:.4f} ± {row['accuracy_sample_std_percent']:.4f} | "
-            f"**{row['macro_f1_mean_percent']:.4f} ± {row['macro_f1_sample_std_percent']:.4f}** | "
-            f"{row['scratch_f1_mean_percent']:.4f} ± {row['scratch_f1_sample_std_percent']:.4f} |"
+            f"| {label} | {row['image_size']} × {row['image_size']} | "
+            f"{row['grid_before_stage2']} | {row['flops_million']:.2f} | "
+            f"{bold}{row['accuracy_mean_percent']:.4f} ± "
+            f"{row['accuracy_sample_std_percent']:.4f}{bold} | "
+            f"{bold}{row['macro_f1_mean_percent']:.4f} ± "
+            f"{row['macro_f1_sample_std_percent']:.4f}{bold} | "
+            f"{row['scratch_f1_mean_percent']:.4f} ± "
+            f"{row['scratch_f1_sample_std_percent']:.4f} |"
         )
+
+    print()
+    print("=" * 92)
+    print("Verdict")
+    print("=" * 92)
+    for line in verdict(merged):
+        print("  " + line)
 
     print()
     print("=" * 92)
@@ -95,8 +183,8 @@ def main() -> int:
         )
         print(f"  compute ratio {ratio:.2f}x")
 
-    if PER_SEED.is_file():
-        per_seed = pd.read_csv(PER_SEED)
+    if Path(args.per_seed).is_file():
+        per_seed = pd.read_csv(args.per_seed)
         print()
         print("=" * 92)
         print("Per-seed Macro-F1 (needed for any paired claim)")
