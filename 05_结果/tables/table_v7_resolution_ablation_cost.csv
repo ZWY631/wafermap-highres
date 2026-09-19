@@ -1,0 +1,5 @@
+cell,image_size,stem,parameters,conv_linear_flops,flops_million,grid_before_stage2
+standard@64,64,standard,1262397,22624960,22.62,16x16
+highres@64,64,highres,1262397,356414464,356.41,64x64
+standard@128,128,standard,1262397,90444544,90.44,32x32
+highres@128,128,highres,1262397,1425602560,1425.6,128x128
