@@ -140,7 +140,7 @@ fi
 echo
 echo "────────────────────────────────────────────────────────────────"
 dl=$(pgrep -f "fetch_patient.sh" | wc -l | tr -d ' ')
-pl=$(pgrep -f "bash 03_代码/scripts/run_resolution_ablation_pipeline.sh" | wc -l | tr -d ' ')
+pl=$(pgrep -fx "bash 03_代码/scripts/run_resolution_ablation_pipeline.sh" | wc -l | tr -d ' ')
 tr=$(pgrep -f "train_resolution_ablation.py" | wc -l | tr -d ' ')
 echo " 进程：耐心下载器 ${dl} ｜ 流水线 ${pl} ｜ 训练 ${tr}   （流水线应为 1；若为 2 说明有重复，需杀掉一个）"
 echo " 看实时日志：tail -f $LOG"
