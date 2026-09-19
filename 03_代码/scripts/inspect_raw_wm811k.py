@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import sys
 import time
 from pathlib import Path
@@ -24,7 +25,13 @@ from wafermap.constants import WM811K_CLASS_NAMES  # noqa: E402
 from wafermap.paths import EXPERIMENT_DIR, RAW_DATA_DIR  # noqa: E402
 
 
-DATASET_DIR = RAW_DATA_DIR / "wm811k_kaggle_qingyi_v1"
+# The raw release directory can be overridden with WM811K_RAW_DIR so that an
+# alternative distribution of the same records (for example the MIRLab mirror
+# used for the input-resolution ablation) can be used without disturbing the
+# canonical Kaggle directory and its recorded SHA-256.
+DATASET_DIR = Path(
+    os.environ.get("WM811K_RAW_DIR", RAW_DATA_DIR / "wm811k_kaggle_qingyi_v1")
+)
 DATA_FILE = DATASET_DIR / "LSWMD.pkl"
 LOG_FILE = EXPERIMENT_DIR / "logs" / "raw_data_inspection.txt"
 
