@@ -26,42 +26,63 @@ echo "pipeline start $(date '+%Y-%m-%d %H:%M:%S')"
 
 abort() { echo "ABORT: $*"; echo "pipeline end $(date '+%Y-%m-%d %H:%M:%S')"; exit 1; }
 
-# ---- stage 1: archive -------------------------------------------------------
-# The parallel downloader assembles the archive by creating an empty file and
-# then appending each segment, so the file can exist for a few seconds before
-# it is complete. Wait for the exact byte count instead of merely for
-# existence, otherwise a mid-assembly sighting would abort the pipeline.
+# ---- stage 1: raw data ------------------------------------------------------
+# Two acceptable sources, so that a manual download can unblock a throttled
+# mirror without touching this script:
+#   (a) $RAW/MIR-WM811K.zip holding exactly ARCHIVE_BYTES bytes, or
+#   (b) $RAW/LSWMD.pkl placed there by hand (any distribution of the records).
+# Either way the pickle must end up at $RAW/LSWMD.pkl for the preprocessing
+# step, which reads it through WM811K_RAW_DIR.
 ARCHIVE_BYTES=344542743
-echo "[1/5] waiting for $ZIP ($ARCHIVE_BYTES bytes)"
+PICKLE="$RAW/LSWMD.pkl"
+echo "[1/5] waiting for raw data: $ZIP ($ARCHIVE_BYTES bytes) or $PICKLE"
 # The mirror is slow and intermittently stops answering after aggressive
 # downloading, so allow up to 48 hours rather than aborting while the download
 # is still making progress.
 for _ in $(seq 1 2880); do
+  if [ -f "$PICKLE" ]; then
+    psize=$(stat -f%z "$PICKLE" 2>/dev/null || echo 0)
+    [ "$psize" -gt 1000000000 ] && break
+  fi
   if [ -f "$ZIP" ]; then
     size=$(stat -f%z "$ZIP" 2>/dev/null || echo 0)
     [ "$size" -eq "$ARCHIVE_BYTES" ] && break
   fi
   sleep 60
 done
-size=$(stat -f%z "$ZIP" 2>/dev/null || echo 0)
-[ "$size" -eq "$ARCHIVE_BYTES" ] || abort "archive incomplete: $size != $ARCHIVE_BYTES"
-echo "archive size=$size (complete)"
-for attempt in 1 2 3; do
-  if unzip -t "$ZIP" > /dev/null 2>&1; then
-    echo "archive integrity OK"
-    break
+
+if [ -f "$PICKLE" ] && [ "$(stat -f%z "$PICKLE" 2>/dev/null || echo 0)" -gt 1000000000 ]; then
+  echo "using a manually provided pickle: $(stat -f%z "$PICKLE") bytes"
+  shasum -a 256 "$PICKLE" | tee "$RAW/SHA256SUMS.txt"
+else
+  size=$(stat -f%z "$ZIP" 2>/dev/null || echo 0)
+  [ "$size" -eq "$ARCHIVE_BYTES" ] || abort "archive incomplete: $size != $ARCHIVE_BYTES"
+  echo "archive size=$size (complete)"
+  for attempt in 1 2 3; do
+    if unzip -t "$ZIP" > /dev/null 2>&1; then
+      echo "archive integrity OK"
+      break
+    fi
+    echo "integrity test attempt $attempt failed; retrying"
+    sleep 60
+  done
+  unzip -t "$ZIP" > /dev/null 2>&1 || abort "archive failed its integrity test"
+  cd "$RAW" || abort "cannot enter $RAW"
+  # The archive holds both a 1.93 GiB Python pickle and a 3.43 GiB MATLAB
+  # matrix, so extract the Python branch first and fall back to a full
+  # extraction only if that pattern does not yield a pickle.
+  unzip -oq "$ZIP" "*/Python/*" -d "$RAW" 2>/dev/null || true
+  FOUND=$(find "$RAW" -name "*.pkl" -type f | head -1)
+  if [ -z "$FOUND" ]; then
+    echo "targeted extraction found no pickle; extracting the whole archive"
+    unzip -oq "$ZIP" -d "$RAW" || abort "extraction failed"
+    FOUND=$(find "$RAW" -name "*.pkl" -type f | head -1)
   fi
-  echo "integrity test attempt $attempt failed; retrying"
-  sleep 60
-done
-unzip -t "$ZIP" > /dev/null 2>&1 || abort "archive failed its integrity test"
-cd "$RAW" || abort "cannot enter $RAW"
-unzip -oq "$ZIP" || abort "extraction failed"
-PICKLE=$(find "$RAW" -name "*.pkl" -type f | head -1)
-[ -n "$PICKLE" ] || abort "no .pkl inside the archive"
-cp -f "$PICKLE" "$RAW/LSWMD.pkl" || abort "cannot stage LSWMD.pkl"
-shasum -a 256 "$RAW/LSWMD.pkl" | tee "$RAW/SHA256SUMS.txt"
-echo "extracted from: $PICKLE"
+  [ -n "$FOUND" ] || abort "no .pkl inside the archive"
+  cp -f "$FOUND" "$PICKLE" || abort "cannot stage LSWMD.pkl"
+  shasum -a 256 "$PICKLE" | tee "$RAW/SHA256SUMS.txt"
+  echo "extracted from: $FOUND"
+fi
 
 # ---- stage 2: preprocessing -------------------------------------------------
 echo "[2/5] preprocessing 128 x 128 (split-manifest consistency is enforced)"
