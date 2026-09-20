@@ -68,6 +68,12 @@ FORBIDDEN_TOKENS = {
     "Target journal": "internal build metadata",
     "Author Checklist": "internal working checklist",
     "Generated from submission-ready manuscript source": "internal build note",
+    # Positioning guards: the paper is a controlled ablation study, not a new
+    # network, and it makes no state-of-the-art claim.
+    "proposed model": "positioning: use 'high-resolution configuration'",
+    "our proposed": "positioning: the contribution is an attribution study",
+    "SOTA": "no state-of-the-art claims",
+    "state-of-the-art": "no state-of-the-art claims",
 }
 
 
