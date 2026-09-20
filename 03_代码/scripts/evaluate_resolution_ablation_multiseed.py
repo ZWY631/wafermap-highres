@@ -252,6 +252,17 @@ def parse_args(argv: Sequence[str] | None = None):
         "--preflight", action="store_true",
         help="report which checkpoints are present without evaluating.",
     )
+    parser.add_argument(
+        "--seeds", default=None,
+        help="comma-separated seeds to evaluate; default is all three. Mainly "
+             "for checking one seed of a cell while the others still train.",
+    )
+    parser.add_argument(
+        "--cells", default=None,
+        help="comma-separated cell ids to evaluate; default is every cell whose "
+             "checkpoints exist. Useful for evaluating one cell while the rest "
+             "are still training.",
+    )
     return parser.parse_args(argv)
 
 
@@ -265,6 +276,18 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
 
     cells = [c for c in CELLS if c.role == "anchor"] if args.anchor else list(CELLS)
+    seeds_to_run = SEEDS
+    if args.seeds:
+        seeds_to_run = tuple(int(t) for t in args.seeds.split(",") if t.strip())
+        unknown = [s for s in seeds_to_run if s not in SEEDS]
+        if unknown:
+            raise SystemExit(f"unknown seeds: {unknown}; expected {SEEDS}")
+    if args.cells:
+        wanted = {token.strip() for token in args.cells.split(",") if token.strip()}
+        unknown = wanted.difference({c.cell_id for c in CELLS})
+        if unknown:
+            raise SystemExit(f"unknown cell ids: {sorted(unknown)}")
+        cells = [c for c in cells if c.cell_id in wanted]
 
     device = select_device()
     print(f"device={device.type}")
@@ -273,8 +296,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     current_size: int | None = None
     dataset = None
     for cell in cells:
-        missing = [s for s in SEEDS if not checkpoint_path(cell, s).is_file()]
-        if missing:
+        missing = [s for s in seeds_to_run if not checkpoint_path(cell, s).is_file()]
+        if missing and not args.seeds:
             print(f"skip {cell.cell_id}: missing checkpoints for seeds {missing}")
             continue
         if cell.image_size != current_size:
@@ -287,7 +310,10 @@ def main(argv: Sequence[str] | None = None) -> int:
                 )
             current_size = cell.image_size
             print(f"activated {cell.image_size}x{cell.image_size} ({directory.name})")
-        for seed in SEEDS:
+        for seed in seeds_to_run:
+            if not checkpoint_path(cell, seed).is_file():
+                print(f"skip {cell.cell_id} seed{seed}: checkpoint missing")
+                continue
             record = evaluate_cell(cell, seed, dataset, device)
             records.append(record)
             print(
@@ -313,13 +339,25 @@ def main(argv: Sequence[str] | None = None) -> int:
                 f"{values['published']*100:.4f} (delta {values['delta']*100:.4f} pp)"
             )
 
-    per_seed.to_csv(OUTPUT_DIR / "per_seed_metrics.csv", index=False)
+    # Merge with whatever was measured before, so a partial run (one cell, or
+    # one seed) cannot erase earlier results; new measurements win.
+    per_seed_path = OUTPUT_DIR / "per_seed_metrics.csv"
+    if per_seed_path.is_file():
+        previous = pd.read_csv(per_seed_path)
+        combined = pd.concat([previous, per_seed], ignore_index=True)
+        combined = combined.drop_duplicates(subset=["cell_id", "seed"], keep="last")
+        per_seed = combined.sort_values(["cell_id", "seed"]).reset_index(drop=True)
+
+    per_seed.to_csv(per_seed_path, index=False)
     summary = summarise(per_seed)
     summary.to_csv(OUTPUT_DIR / "aggregate_metrics.csv", index=False)
     summary.to_csv(TABLE_PATH, index=False)
-    (OUTPUT_DIR / "anchor_check.json").write_text(
-        json.dumps(anchor_findings, indent=2), encoding="utf-8"
-    )
+    # Only rewrite the anchor record when the anchors were part of this run,
+    # so a partial evaluation cannot erase earlier anchor evidence.
+    if anchor_findings:
+        (OUTPUT_DIR / "anchor_check.json").write_text(
+            json.dumps(anchor_findings, indent=2), encoding="utf-8"
+        )
     print(f"\nwrote {TABLE_PATH}")
     print(summary.to_string(index=False))
     return 0

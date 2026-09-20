@@ -33,16 +33,15 @@ CONTRASTS = (
     ("R128-S1N", "R128-S2P", "the stem effect at 128 px"),
 )
 
-# Table 22 order and labels. The three 32 x 32 configurations of the stem
-# ablation are the reference band for the "internal grid, not input pixels"
-# branch of the argument.
+# Table 22 order and labels. The two 64 x 64 rows are the frozen three-seed
+# configurations: the re-trained control cells exist only for seed 42 (their
+# role is to validate the new code path, reported in the text), so the table
+# uses the frozen values as the reference corners of the 2 x 2 design.
 TABLE_ORDER = (
     ("F64-S2P", "Standard stem, 64 × 64 (frozen)"),
     ("R128-S2P", "Standard stem, 128 × 128"),
     ("F64-S1N", "HighRes stem, 64 × 64 (frozen)"),
     ("R128-S1N", "HighRes stem, 128 × 128"),
-    ("R64-S2P", "Standard stem, 64 × 64 (re-run through the same pipeline)"),
-    ("R64-S1N", "HighRes stem, 64 × 64 (re-run through the same pipeline)"),
 )
 
 # The 32 x 32 configurations of the stem ablation form the reference band for

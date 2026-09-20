@@ -16,10 +16,10 @@ echo "════════════════════════�
 # ---- 1. 原始数据 ----
 echo
 echo "【1/5 原始数据】"
-if [ -f "$RAW/LSWMD.pkl" ] && [ "$(stat -f%z "$RAW/LSWMD.pkl" 2>/dev/null || echo 0)" -gt 1000000000 ]; then
+if [ -f "$RAW/MIR-WM811K.zip" ] && [ "$(stat -f%z "$RAW/MIR-WM811K.zip" 2>/dev/null || echo 0)" -eq "$ARCHIVE_BYTES" ]; then
+  echo "  ✅ 已就位（由归档自动解压）：$(du -h "$RAW/LSWMD.pkl" 2>/dev/null | cut -f1)"
+elif [ -f "$RAW/LSWMD.pkl" ] && [ "$(stat -f%z "$RAW/LSWMD.pkl" 2>/dev/null || echo 0)" -gt 1000000000 ]; then
   echo "  ✅ 已就位（手动放入）：$(du -h "$RAW/LSWMD.pkl" | cut -f1)"
-elif [ -f "$RAW/MIR-WM811K.zip" ] && [ "$(stat -f%z "$RAW/MIR-WM811K.zip" 2>/dev/null || echo 0)" -eq "$ARCHIVE_BYTES" ]; then
-  echo "  ✅ 归档完整（$(du -h "$RAW/MIR-WM811K.zip" | cut -f1)），等待解压"
 else
   done_bytes=$("$PY" - <<PYEOF
 import glob, os
@@ -114,6 +114,9 @@ if len(frame) == 0:
 col = [c for c in frame.columns if "val" in c.lower() and "macro" in c.lower()][0]
 best = float(frame[col].max())
 secs = frame["epoch_seconds"].iloc[-1] if "epoch_seconds" in frame else float("nan")
+if len(frame) >= 30:
+    print(f"  ✅ {stem:9s} seed{seed:5s} 已完成 30/30  best={best:.4f}  （{secs/60:.1f} 分/epoch）")
+    raise SystemExit
 left = (30 - len(frame)) * secs / 60 if secs == secs else float("nan")
 print(f"  ⏳ {stem:9s} seed{seed:5s} epoch {len(frame):2d}/30  best={best:.4f}  "
       f"约 {secs/60:.1f} 分/epoch，剩余约 {left/60:.1f} 小时")
