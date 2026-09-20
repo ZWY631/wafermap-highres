@@ -168,13 +168,13 @@ def main() -> None:
     findings.append(f"Word 内嵌图：检出 {embedded} 个图片对象（应为 7）。")
 
     # ---- 3. tables ----
-    expected_tables = [str(n) for n in range(1, 22)]
+    expected_tables = [str(n) for n in range(1, 23)]
     captions = re.findall(r"\*\*Table ([\dA-Z]+)\.", md_text)
     missing_tables = [t for t in expected_tables if t not in captions]
     if not missing_tables:
         findings.append(
             f"表标题：{len(expected_tables)} 个 Table 标题齐全且位于表格上方"
-            f"（按正文出现顺序连续编号 1–21，无字母后缀）。"
+            f"（按正文出现顺序连续编号 1–22，无字母后缀）。"
         )
     else:
         failures.append(f"缺失表标题：{missing_tables}")
@@ -248,6 +248,16 @@ def main() -> None:
         "12.52": "ResNet18 FLOP factor over the standard stem",
         "93.68": "INT8 cold-start regression",
         "72.4452": "ResNet18 Scratch F1",
+        # Input-resolution control (Sections 3.4.2 / 4.1.1.2, Table 6);
+        # sources are table_v7_resolution_ablation_*.csv.
+        "87.4079": "standard stem at 128 px Macro-F1",
+        "67.9853": "standard stem at 128 px Scratch F1",
+        "6.9132": "gain of standard@128 over standard@64",
+        "2.7950": "gap between standard@128 and HighRes@64",
+        "1.1576": "lower bound of the 32 x 32 band gap",
+        "1.6425": "upper bound of the 32 x 32 band gap",
+        "87.5777": "best standard@128 seed",
+        "89.9796": "weakest frozen HighRes seed",
     }
     for token, label in spot.items():
         count = md_text.count(token)

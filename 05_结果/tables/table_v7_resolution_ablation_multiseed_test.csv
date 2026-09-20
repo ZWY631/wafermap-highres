@@ -1,2 +1,4 @@
 cell_id,display_name,image_size,stem,role,seeds,accuracy_mean_percent,accuracy_sample_std_percent,macro_f1_mean_percent,macro_f1_sample_std_percent,balanced_accuracy_mean_percent,balanced_accuracy_sample_std_percent,scratch_f1_mean_percent,scratch_f1_sample_std_percent
+F64-S1N,"frozen 64 x 64, stride 1 + identity (HighRes)",64,highres,anchor,3,98.0342,0.0039,90.2029,0.1965,89.1151,0.5514,81.6965,0.7473
+F64-S2P,"frozen 64 x 64, stride 2 + max pool",64,standard,anchor,3,96.775,0.0425,80.4947,0.1316,78.5458,0.3015,25.018,2.1011
 R128-S2P,"128 x 128, stride 2 + max pool",128,standard,new,3,97.641,0.0669,87.4079,0.1982,85.6193,0.9904,67.9853,2.8633

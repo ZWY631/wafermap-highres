@@ -22,7 +22,7 @@ Across three random seeds (42, 123, 2026) on the full labeled WM-811K subset (17
 
 The mean Macro-F1 gain over the parameter-matched standard stem is **+9.7082 pp**, concentrated in Scratch (+56.68), Loc (+10.58), and Edge-Loc (+8.03). A same-protocol adapted reproduction of the wafer-specific Kang & Kang stacking ensemble (14.7 M parameters) scores 97.8427% / 88.5738%, with paired (McNemar + bootstrap + randomization) support in two of three seeds.
 
-Evaluation additionally covers: 4-configuration stem ablation, class-imbalance controls, per-class analysis, error-morphology audit, 12-condition robustness stress tests, Grad-CAM audit, complexity/throughput benchmarking (Apple M1 Pro/MPS), and frozen Windows x86-64 ONNX FP32/INT8 deployment.
+Evaluation additionally covers: a 4-configuration stem ablation, a 6-configuration resolution-versus-aliasing comparison with zero-parameter anti-aliased (binomial blur) controls, an input-resolution control that retrains the standard stem at 128 × 128, class-imbalance controls, per-class analysis, error-morphology audit, 12-condition robustness stress tests, Grad-CAM audit, complexity/throughput benchmarking (Apple M1 Pro/MPS), frozen Windows x86-64 ONNX FP32/INT8 deployment, and zero-shot transfer to the external MixedWM38 collection.
 
 ## Repository layout
 

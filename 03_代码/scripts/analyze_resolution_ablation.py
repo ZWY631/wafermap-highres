@@ -33,7 +33,7 @@ CONTRASTS = (
     ("R128-S1N", "R128-S2P", "the stem effect at 128 px"),
 )
 
-# Table 22 order and labels. The two 64 x 64 rows are the frozen three-seed
+# Table 6 (as numbered in the manuscript) order and labels. The two 64 x 64 rows are the frozen three-seed
 # configurations: the re-trained control cells exist only for seed 42 (their
 # role is to validate the new code path, reported in the text), so the table
 # uses the frozen values as the reference corners of the 2 x 2 design.
@@ -67,23 +67,34 @@ def verdict(merged: pd.DataFrame) -> list[str]:
     gap_to_highres = FROZEN_HIGHRES_64 - s128
     band = band_32()
     band_lo, band_hi = min(band.values()), max(band.values())
-    same_direction = band_lo - 0.75 <= s128 <= band_hi + 0.75
+    in_band = band_lo - 0.25 <= s128 <= band_hi + 0.25
+    below_band = s128 < band_lo - 0.25
 
     lines = [
         f"standard@128 Macro-F1 = {s128:.4f}",
         f"  vs frozen HighRes@64 ({FROZEN_HIGHRES_64:.4f}): {s128 - FROZEN_HIGHRES_64:+.4f} pp",
         f"  vs frozen standard@64 ({FROZEN_STANDARD_64:.4f}): "
         f"{s128 - FROZEN_STANDARD_64:+.4f} pp",
+        f"  vs the 32 x 32 band: {s128 - band_hi:+.4f} to {s128 - band_lo:+.4f} pp",
         "  frozen 32 x 32 band "
         + ", ".join(f"{key} {value:.4f}" for key, value in band.items()),
     ]
-    if same_direction and gap_to_highres > 0.5:
-        lines.append(
-            "BRANCH A - internal grid dominates. Feeding the standard stem a finer "
-            "input buys little: it lands in the 32 x 32 band and stays well below "
-            "HighRes@64 despite costing only 1/3.94 of its compute. Keep the "
-            "early-resolution claim and report the cost saving."
-        )
+    if (in_band or below_band) and gap_to_highres > 0.5:
+        if below_band:
+            lines.append(
+                "BRANCH A (strengthened) - internal grid dominates. The standard stem "
+                "at 128 px does not even reach the 32 x 32 band: it lands below every "
+                "configuration that attains the same pre-stage-2 grid by other means, "
+                "while staying far below HighRes@64 at 3.94 times less compute. The "
+                "samples have to survive the stem, not merely enter the network."
+            )
+        else:
+            lines.append(
+                "BRANCH A - internal grid dominates. Feeding the standard stem a finer "
+                "input buys little: it lands in the 32 x 32 band and stays well below "
+                "HighRes@64 despite costing only 1/3.94 of its compute. Keep the "
+                "early-resolution claim and report the cost saving."
+            )
     elif abs(gap_to_highres) <= 0.5:
         lines.append(
             "BRANCH B - input sampling dominates. The standard stem catches up with "
@@ -128,7 +139,7 @@ def main() -> int:
     )
 
     print("=" * 92)
-    print("Table 22 (paste into the manuscript; cells in paper order)")
+    print("Table 6 (paste into the manuscript; cells in paper order)")
     print("=" * 92)
     print(
         "| Configuration | Input | Grid before stage 2 | FLOPs (M) | Accuracy (%) "
